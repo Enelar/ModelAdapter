@@ -18,14 +18,8 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="exported_pipe.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="exported_pipe.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="objects_types.h">
       <Filter>Source Files</Filter>
     </ClInclude>
