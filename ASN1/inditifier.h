@@ -17,6 +17,7 @@ namespace asn1
     inditifier(CLASS, bool, int);
     inditifier(int);
     inditifier(std::string);
+    inditifier(const inditifier &) = default;
 
     operator std::string() const;
 

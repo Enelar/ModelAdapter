@@ -78,15 +78,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="entity.h" />
     <ClInclude Include="inditifier.h" />
     <ClInclude Include="inditifier_class.h" />
+    <ClInclude Include="internal_header.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="entity.cpp" />
     <ClCompile Include="inditifier.cpp" />
+    <ClCompile Include="internal_header.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AX\source\AX.vcxproj">
