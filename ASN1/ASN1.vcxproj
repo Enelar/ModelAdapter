@@ -82,6 +82,8 @@
     <ClInclude Include="base\inditifier\inditifier.h" />
     <ClInclude Include="base\inditifier\inditifier_class.h" />
     <ClInclude Include="base\length\length.h" />
+    <ClInclude Include="buildin\boolean.h" />
+    <ClInclude Include="builtin\builtin.h" />
     <ClInclude Include="internal_header.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
@@ -89,6 +91,7 @@
     <ClCompile Include="base\entity\entity.cpp" />
     <ClCompile Include="base\inditifier\inditifier.cpp" />
     <ClCompile Include="base\length\length.cpp" />
+    <ClCompile Include="builtin\boolean.cpp" />
     <ClCompile Include="internal_header.cpp" />
   </ItemGroup>
   <ItemGroup>

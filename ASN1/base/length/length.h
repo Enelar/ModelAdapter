@@ -1,9 +1,17 @@
+#pragma once
+
 #include "../../stdafx.h"
 
 namespace asn1
 {
   struct length
   {
+    enum LENGTH_TYPE
+    {
+      DEFINITE,
+      INDEFINITE
+    };
+
     static std::string EncodeLength(word);
     static std::string EncodeIndifinite();
     static std::string EncodeIndifiniteEnd();

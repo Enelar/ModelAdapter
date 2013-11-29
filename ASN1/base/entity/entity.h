@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../inditifier/inditifier.h"
+#include "../length/length.h"
 #include <vector>
 namespace asn1
 {
@@ -12,17 +13,13 @@ namespace asn1
 
     entity(inditifier type);
   public:
+    typedef length::LENGTH_TYPE LENGTH_TYPE;
+
     virtual operator std::string() const = 0;
     virtual int Length() const = 0;
-
-    enum LENGTH_TYPE
-    {
-      DEFINITE,
-      INDEFINITE
-    };
     virtual LENGTH_TYPE LengthType() const = 0;
-    virtual ~entity() = default;
 
+    virtual ~entity() = default;
   protected:
     std::string EncodeLength(word length) const;
     std::string EncodeLength() const;

@@ -26,6 +26,9 @@
     <Filter Include="source\base\length\src">
       <UniqueIdentifier>{b9e84d4b-d87e-4879-be36-5eefc95f52a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\builtin">
+      <UniqueIdentifier>{b66959cf-0901-42e1-b0db-759a5d6fee37}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="internal_header.h">
@@ -44,6 +47,12 @@
     <ClInclude Include="base\length\length.h">
       <Filter>source\base\length</Filter>
     </ClInclude>
+    <ClInclude Include="buildin\boolean.h">
+      <Filter>source\builtin</Filter>
+    </ClInclude>
+    <ClInclude Include="builtin\builtin.h">
+      <Filter>source\builtin</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="internal_header.cpp">
@@ -57,6 +66,9 @@
     </ClCompile>
     <ClCompile Include="base\length\length.cpp">
       <Filter>source\base\length\src</Filter>
+    </ClCompile>
+    <ClCompile Include="builtin\boolean.cpp">
+      <Filter>source\builtin</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
