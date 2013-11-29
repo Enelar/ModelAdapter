@@ -20,6 +20,12 @@
     <Filter Include="source\base\inditifier\src">
       <UniqueIdentifier>{ad3222da-4171-4f28-98a6-458c11206f48}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\base\length">
+      <UniqueIdentifier>{746dbdae-80dd-4e1e-9a53-2425178cdf76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\base\length\src">
+      <UniqueIdentifier>{b9e84d4b-d87e-4879-be36-5eefc95f52a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="internal_header.h">
@@ -35,6 +41,9 @@
       <Filter>source\base\entity</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="base\length\length.h">
+      <Filter>source\base\length</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="internal_header.cpp">
@@ -45,6 +54,9 @@
     </ClCompile>
     <ClCompile Include="base\entity\entity.cpp">
       <Filter>source\base\entity\src</Filter>
+    </ClCompile>
+    <ClCompile Include="base\length\length.cpp">
+      <Filter>source\base\length\src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

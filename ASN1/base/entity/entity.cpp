@@ -1,4 +1,5 @@
 #include "entity.h"
+#include "../length/length.h"
 #include "../../internal_header.h"
 #include <list>
 
@@ -12,33 +13,10 @@ entity::entity(inditifier _type)
 
 }
 
-namespace
-{
-  const int length_content_in_octet = BITSINBYTE - 1;
-}
-
 
 string entity::EncodeLength(word length) const
 {
-  auto ToString = [](const std::vector<ub> &a)
-  {
-    std::string t;
-    for each (ub ch in a)
-      t.push_back(ch);
-    return t;
-  };
-  if (length < 128)
-    return ToString({ convert<ub>(length) });
-  std::vector<ub> t;
-  while (length != 0)
-  {
-    ub temp = length & GETMAXVALUE(length_content_in_octet);
-    temp |= GETMAXCOUNT(length_content_in_octet);
-    t.push_back(temp);
-    length >>= length_content_in_octet;
-  }
-  std::reverse(t.begin(), t.end());
-  return ToString(t);
+  return length::EncodeLength(length);
 }
 
 string entity::EncodeLength() const
@@ -48,7 +26,7 @@ string entity::EncodeLength() const
 
 string entity::EncodeConstructed(word chunk_max_size, const string &source)
 {
-#define FORCE_INDEFINITE_FORM // require for CER encoding
+#define FORCE_INDEFINITE_FORM 1 // require for CER encoding
   auto GetHeader = [this, source]()
   {
     auto GetConstructedInditifier = [this]()
@@ -58,11 +36,7 @@ string entity::EncodeConstructed(word chunk_max_size, const string &source)
       return convert<string>(constructed);
     };
     auto ret = GetConstructedInditifier();
-#ifndef FORCE_INDEFINITE_FORM
-    ConCat(ret, EncodeLength());
-#else
-    ret.push_back(GETMAXCOUNT(length_content_in_octet));
-#endif
+    ConCat(ret, FORCE_INDEFINITE_FORM ? length::EncodeIndifinite() : EncodeLength());
     return ret;
   };
   auto header = GetHeader();
@@ -88,7 +62,6 @@ string entity::EncodeConstructed(word chunk_max_size, const string &source)
     ConCat(header, oper.front());
     oper.pop_front();
   }
-  header.push_back(0);
-  header.push_back(0);
+  ConCat(header, length::EncodeIndifiniteEnd());
   return header;
 }
