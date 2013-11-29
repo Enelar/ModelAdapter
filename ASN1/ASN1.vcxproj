@@ -78,15 +78,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="entity.h" />
-    <ClInclude Include="inditifier.h" />
-    <ClInclude Include="inditifier_class.h" />
+    <ClInclude Include="base\entity\entity.h" />
+    <ClInclude Include="base\inditifier\inditifier.h" />
+    <ClInclude Include="base\inditifier\inditifier_class.h" />
     <ClInclude Include="internal_header.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="entity.cpp" />
-    <ClCompile Include="inditifier.cpp" />
+    <ClCompile Include="base\entity\entity.cpp" />
+    <ClCompile Include="base\inditifier\inditifier.cpp" />
     <ClCompile Include="internal_header.cpp" />
   </ItemGroup>
   <ItemGroup>

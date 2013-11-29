@@ -5,40 +5,46 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="source\inditifier">
+    <Filter Include="source\base">
+      <UniqueIdentifier>{e5dadcae-f0b1-430c-8650-31c81003caf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\base\entity">
+      <UniqueIdentifier>{623750e1-e4b1-4a37-a360-f3317a5906a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\base\entity\src">
+      <UniqueIdentifier>{edc07313-570a-481f-8871-a7c9ae3c272b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\base\inditifier">
       <UniqueIdentifier>{5fd71a63-236f-45fc-8629-4e069f6ed1ed}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source\inditifier\src">
+    <Filter Include="source\base\inditifier\src">
       <UniqueIdentifier>{ad3222da-4171-4f28-98a6-458c11206f48}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="source\src">
-      <UniqueIdentifier>{edc07313-570a-481f-8871-a7c9ae3c272b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="inditifier.h">
-      <Filter>source\inditifier</Filter>
-    </ClInclude>
-    <ClInclude Include="inditifier_class.h">
-      <Filter>source\inditifier</Filter>
-    </ClInclude>
-    <ClInclude Include="entity.h">
-      <Filter>source</Filter>
-    </ClInclude>
     <ClInclude Include="internal_header.h">
       <Filter>source</Filter>
     </ClInclude>
+    <ClInclude Include="base\inditifier\inditifier.h">
+      <Filter>source\base\inditifier</Filter>
+    </ClInclude>
+    <ClInclude Include="base\inditifier\inditifier_class.h">
+      <Filter>source\base\inditifier</Filter>
+    </ClInclude>
+    <ClInclude Include="base\entity\entity.h">
+      <Filter>source\base\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="inditifier.cpp">
-      <Filter>source\inditifier\src</Filter>
-    </ClCompile>
-    <ClCompile Include="entity.cpp">
-      <Filter>source\src</Filter>
-    </ClCompile>
     <ClCompile Include="internal_header.cpp">
       <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="base\inditifier\inditifier.cpp">
+      <Filter>source\base\inditifier\src</Filter>
+    </ClCompile>
+    <ClCompile Include="base\entity\entity.cpp">
+      <Filter>source\base\entity\src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 #include "entity.h"
-#include "internal_header.h"
+#include "../../internal_header.h"
 #include <list>
 
 using namespace asn1;
