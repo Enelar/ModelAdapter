@@ -1,3 +1,6 @@
 [submodule "AX"]
 	path = AX
 	url = http://github.com/Enelar/AX
+[submodule "ASN1"]
+	path = ASN1
+	url = http://github.com/Enelar/ASN1
