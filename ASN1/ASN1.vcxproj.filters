@@ -53,6 +53,9 @@
     <ClInclude Include="builtin\builtin.h">
       <Filter>source\builtin</Filter>
     </ClInclude>
+    <ClInclude Include="base\entity\raw.h">
+      <Filter>source\base\entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="internal_header.cpp">
@@ -69,6 +72,9 @@
     </ClCompile>
     <ClCompile Include="builtin\boolean.cpp">
       <Filter>source\builtin</Filter>
+    </ClCompile>
+    <ClCompile Include="base\entity\raw.cpp">
+      <Filter>source\base\entity\src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
