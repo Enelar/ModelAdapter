@@ -1,9 +1,6 @@
-enum ELEMENT
-{
-  TEST = 12
-};
-
 #include <string>
+#include "object_types.h"
+#include "object_interface.h"
 
 class exported_pipe;
 class pipe
@@ -12,5 +9,8 @@ class pipe
 public:
   pipe();
   virtual ~pipe();
-  int GetID(ELEMENT, std::string name);
+  object_interface Get(OBJECT_TYPES type, std::string name);
+  object_interface Get(word id);
+private:
+  word GetID(OBJECT_TYPES type, std::string name);
 };

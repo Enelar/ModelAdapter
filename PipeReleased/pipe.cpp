@@ -11,7 +11,21 @@ pipe::~pipe()
   delete ep;
 }
 
-int pipe::GetID(ELEMENT type, std::string name)
+object_interface pipe::Get(OBJECT_TYPES type, std::string name)
+{
+  word id = GetID(type, name);
+  return Get(id);
+}
+
+object_interface pipe::Get(word _id)
+{
+  throw_assert(_id != 0);
+  object_interface obj;
+  obj.id = _id;
+  return obj;
+}
+
+word pipe::GetID(OBJECT_TYPES type, std::string name)
 {
   return ep->GetPipeElement(type, name.c_str());
 }

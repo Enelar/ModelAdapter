@@ -43,11 +43,13 @@
     <OutDir>$(SolutionDir)..\build\$(SolutionName)\$(Configuration)\</OutDir>
     <LibraryPath>$(OutDir);$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
     <IntDir>$(SolutionDir)..\intermediate\$(SolutionName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>F:\_UPS_OMSK\Source\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)..\build\$(SolutionName)\$(Configuration)\</OutDir>
     <LibraryPath>$(OutDir);$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
     <IntDir>$(SolutionDir)..\intermediate\$(SolutionName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>F:\_UPS_OMSK\Source\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -56,6 +58,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -63,6 +66,7 @@
     </Link>
     <Lib>
       <AdditionalOptions>pipeexport.lib %(AdditionalOptions)</AdditionalOptions>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -89,9 +93,13 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="object_interface.h" />
+    <ClInclude Include="object_types.h" />
     <ClInclude Include="Pipe.h" />
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="object_interface.cpp" />
     <ClCompile Include="pipe.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
