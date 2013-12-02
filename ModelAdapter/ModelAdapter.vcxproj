@@ -44,12 +44,16 @@
     <ExecutablePath>F:\_UPS_OMSK_1\Exe;$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
     <IncludePath>C:\Users\enela_000\Documents\Visual Studio 2013\Projects\ModelAdapter\PipeExport;F:\_UPS_OMSK\Source\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <LibraryPath>C:\Users\enela_000\Documents\Visual Studio 2013\Projects\build\pipeexport;F:\_UPS_OMSK_1\Debug;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+    <OutDir>$(SolutionDir)..\build\$(SolutionName)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\intermediate\$(SolutionName)\$(Configuration)\$(ProjectName)</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <ExecutablePath>F:\_UPS_OMSK_1\Exe;$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
     <IncludePath>F:\_UPS_OMSK\Source\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <LibraryPath>F:\_UPS_OMSK_1\Debug;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+    <OutDir>$(SolutionDir)..\build\$(SolutionName)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\intermediate\$(SolutionName)\$(Configuration)\$(ProjectName)</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -89,6 +93,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="objects_types.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AX\source\AX.vcxproj">
+      <Project>{792c27e3-863b-434c-a47a-f5f0515bfb20}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\PipeReleased\PipeReleased.vcxproj">
+      <Project>{4f7ae8f9-ee64-4c50-aeca-9346dd9fa1df}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PipeExport", "PipeExport.vcproj", "{C6330977-2DE1-42B3-A600-E1ECCBA4B746}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "PipeExport\Test\Test.vcproj", "{020C55D8-DFCE-4D59-8365-550E1168B655}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PipeExport", "PipeExport\PipeExport.vcproj", "{4D17B19F-39C9-454E-989A-4C142CD8CBD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C6330977-2DE1-42B3-A600-E1ECCBA4B746}.Debug|Win32.ActiveCfg = Debug|Win32
-		{C6330977-2DE1-42B3-A600-E1ECCBA4B746}.Debug|Win32.Build.0 = Debug|Win32
-		{C6330977-2DE1-42B3-A600-E1ECCBA4B746}.Release|Win32.ActiveCfg = Release|Win32
-		{C6330977-2DE1-42B3-A600-E1ECCBA4B746}.Release|Win32.Build.0 = Release|Win32
 		{020C55D8-DFCE-4D59-8365-550E1168B655}.Debug|Win32.ActiveCfg = Debug|Win32
 		{020C55D8-DFCE-4D59-8365-550E1168B655}.Debug|Win32.Build.0 = Debug|Win32
 		{020C55D8-DFCE-4D59-8365-550E1168B655}.Release|Win32.ActiveCfg = Release|Win32
 		{020C55D8-DFCE-4D59-8365-550E1168B655}.Release|Win32.Build.0 = Release|Win32
+		{4D17B19F-39C9-454E-989A-4C142CD8CBD3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4D17B19F-39C9-454E-989A-4C142CD8CBD3}.Debug|Win32.Build.0 = Debug|Win32
+		{4D17B19F-39C9-454E-989A-4C142CD8CBD3}.Release|Win32.ActiveCfg = Release|Win32
+		{4D17B19F-39C9-454E-989A-4C142CD8CBD3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
