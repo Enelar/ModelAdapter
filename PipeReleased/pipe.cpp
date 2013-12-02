@@ -1,9 +1,9 @@
 #include "Pipe.h"
 #include "../PipeExport/exported_pipe.h"
 
-pipe::pipe()
+pipe::pipe(const std::string &named_pipe)
 {
-  ep = new exported_pipe("aa");
+  ep = new exported_pipe(named_pipe.c_str());
 }
 
 pipe::~pipe()
@@ -11,7 +11,7 @@ pipe::~pipe()
   delete ep;
 }
 
-object_interface pipe::Get(OBJECT_TYPES type, std::string name)
+object_interface pipe::Get(const OBJECT_TYPES type, const std::string &name)
 {
   word id = GetID(type, name);
   return Get(id);
@@ -25,7 +25,7 @@ object_interface pipe::Get(word _id)
   return obj;
 }
 
-word pipe::GetID(OBJECT_TYPES type, std::string name)
+word pipe::GetID(const OBJECT_TYPES type, const std::string &name)
 {
   return ep->GetPipeElement(type, name.c_str());
 }

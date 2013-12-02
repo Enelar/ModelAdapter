@@ -7,10 +7,12 @@ class pipe
 {
   exported_pipe *ep;
 public:
-  pipe();
+  pipe() : pipe("Главная")
+  {}
+  pipe(const std::string &named_pipe);
   virtual ~pipe();
-  object_interface Get(OBJECT_TYPES type, std::string name);
-  object_interface Get(word id);
+  object_interface Get(const OBJECT_TYPES type, const std::string &name);
+  object_interface Get(const word id);
 private:
-  word GetID(OBJECT_TYPES type, std::string name);
+  word GetID(const OBJECT_TYPES type, const std::string &name);
 };

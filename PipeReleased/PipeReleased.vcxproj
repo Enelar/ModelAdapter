@@ -95,7 +95,7 @@
   <ItemGroup>
     <ClInclude Include="object_interface.h" />
     <ClInclude Include="object_types.h" />
-    <ClInclude Include="Pipe.h" />
+    <ClInclude Include="pipe.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
