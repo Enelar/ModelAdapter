@@ -11,8 +11,8 @@ public:
   param_info Info(word) const;
 
   template<typename T>
-  T OriginT::*GetRef(word);
-  word GetID(string);
+  T OriginT::*GetRef(word) const;
+  word GetID(string) const;
 };
 
 #ifndef _MAPPER_ROUTE_TABLE_IMPL

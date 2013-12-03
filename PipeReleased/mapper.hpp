@@ -26,7 +26,7 @@ template<typename OriginT>
 template<typename T>
 T mapper<OriginT>::Get(word id) const
 {
-  return IntAccess(id);
+  return IntAccess<T>(id);
 }
 
 template<typename OriginT>
@@ -34,7 +34,7 @@ template<typename T>
 T mapper<OriginT>::Get(string name) const
 {
   word id = RouteTable().GetID(name);
-  return Get(id);
+  return Get<T>(id);
 }
 
 template<typename OriginT>
@@ -68,32 +68,39 @@ template<typename OriginT>
 mapper_route<OriginT> &mapper<OriginT>::RouteTable()
 {
   if (!route_table)
-    route_table = NEW mapper_route();
-  return route_table;
+  {
+    route_table = NEW mapper_route<OriginT>();    UpdateRouteTable(*this);
+  }
+  return *route_table;
 }
 
 template<typename OriginT>
 const mapper_route<OriginT> &mapper<OriginT>::RouteTable() const
 {
-  if (!route_table)
-    route_table = NEW mapper_route();
-  return route_table;
+  //REFACTOR
+  return (const_cast<mapper<OriginT> *>(this))->RouteTable();
 }
 
 template<typename OriginT>
 template<typename T>
-T &mapper<OriginT>::IntAccess(word)
+T &mapper<OriginT>::IntAccess(word id)
 {
-  T OriginT::* ref = RouteTable().GetRef(id);
+  T OriginT::* ref = RouteTable().GetRef<T>(id);
   Validate();
   return observee->*ref;
 }
 
 template<typename OriginT>
 template<typename T>
-T &mapper<OriginT>::IntAccess(word) const
+T &mapper<OriginT>::IntAccess(word id) const
 {
-  T OriginT::* ref = RouteTable().GetRef(id);
+  T OriginT::* ref = RouteTable().GetRef<T>(id);
   Validate();
   return observee->*ref;
+}
+
+template<typename OriginT>
+void mapper<OriginT>::UpdateRouteTable(mapper &)
+{
+  implementation_required("mapper::UpdateRouteTable should be implemented for all supported classes");
 }

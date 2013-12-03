@@ -16,13 +16,13 @@ param_info mapper_route<OriginT>::Info(word) const
 
 template<typename OriginT>
 template<typename T>
-T OriginT::* mapper_route<OriginT>::GetRef(word)
+T OriginT::* mapper_route<OriginT>::GetRef(word) const
 {
   todo(GetRef);
 }
 
 template<typename OriginT>
-word mapper_route<OriginT>::GetID(string)
+word mapper_route<OriginT>::GetID(string) const
 {
   todo(GetID);
 }

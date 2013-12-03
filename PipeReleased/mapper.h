@@ -42,6 +42,8 @@ private:
   T &IntAccess(word);
   template<typename T>
   T &IntAccess(word) const;
+
+  static void UpdateRouteTable(mapper &);
 };
 
 #ifndef _MAPPER_IMPL_
