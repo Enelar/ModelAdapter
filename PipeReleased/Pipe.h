@@ -15,4 +15,5 @@ public:
   object_interface Get(const word id);
 private:
   word GetID(const OBJECT_TYPES type, const std::string &name);
+  info GetInfoByObjectType(const OBJECT_TYPES type);
 };
