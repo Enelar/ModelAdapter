@@ -2,11 +2,18 @@
 #include "../PipeReleased/mapper.h"
 #include <iostream>
 
+struct my_struct
+{
+  double A, B, SLGDLKJGHSLKGJFG;
+};
 
 template<>
-void mapper<pipe>::UpdateRouteTable(mapper &)
+void mapper<my_struct>::UpdateRouteTable(mapper &m)
 {
-  todo(pipe support);
+  m.Register("A", &my_struct::A);
+  m.Register("B", &my_struct::B);
+  m.Register("Hard", &my_struct::SLGDLKJGHSLKGJFG);
+  m.Register("Synonim", &my_struct::SLGDLKJGHSLKGJFG);
 }
 
 void main()
@@ -15,8 +22,8 @@ void main()
   object_interface obj = p.Get(VALVE, "PV10-229");
   std::cout << obj.GetID() << std::endl;
 
-  mapper<pipe> a;
-  a.Platform(&p);
-  a.Get<int>("name");
-//  exported_pipe t("test");
+  my_struct origin;
+  mapper<my_struct> a;
+  a.Platform(&origin);
+  a.Set<double>("Hard", 5);
 }

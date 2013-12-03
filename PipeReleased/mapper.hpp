@@ -41,7 +41,7 @@ template<typename OriginT>
 template<typename T>
 void mapper<OriginT>::Set(word id, const T& data)
 {
-  IntAccess(id) = data;
+  IntAccess<T>(id) = data;
 }
 
 template<typename OriginT>
