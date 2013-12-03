@@ -192,6 +192,18 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath=".\object_types.h"
+				>
+			</File>
+			<File
+				RelativePath=".\server_object_container.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Vavle.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"

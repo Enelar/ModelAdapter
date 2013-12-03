@@ -4,8 +4,12 @@
 #define _API __declspec(dllimport)
 #endif
 
+#include "server_object_container.h"
+
 
 class CPipeClient; // original
+struct CShBase;
+
 class _API exported_pipe
 {
   CPipeClient *pipe;
@@ -16,5 +20,7 @@ public:
   virtual ~exported_pipe();
 
 public:
+  void Update();
   int GetPipeElement( unsigned int nType,const char* szName );
+  server_object_container<CShBase> GetServerObject( unsigned int id ) const;
 };
