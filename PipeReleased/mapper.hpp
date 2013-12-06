@@ -69,7 +69,8 @@ mapper_route<OriginT> &mapper<OriginT>::RouteTable()
 {
   if (!route_table)
   {
-    route_table = NEW mapper_route<OriginT>();    UpdateRouteTable(*this);
+    route_table = NEW mapper_route<OriginT>();
+    UpdateRouteTable(*this);
   }
   return *route_table;
 }
