@@ -93,10 +93,10 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="mapper.h" />
-    <ClInclude Include="mapper.hpp" />
-    <ClInclude Include="mapper_route_table.h" />
-    <ClInclude Include="mapper_route_table.hpp" />
+    <ClInclude Include="mapper\mapper.h" />
+    <ClInclude Include="mapper\mapper.hpp" />
+    <ClInclude Include="mapper\mapper_route_table.h" />
+    <ClInclude Include="mapper\mapper_route_table.hpp" />
     <ClInclude Include="serialised_param.h" />
     <ClInclude Include="info.h" />
     <ClInclude Include="object_interface.h" />

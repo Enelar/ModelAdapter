@@ -48,16 +48,16 @@
     <ClInclude Include="serialised_param.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="mapper.h">
+    <ClInclude Include="mapper\mapper.h">
       <Filter>mapper</Filter>
     </ClInclude>
-    <ClInclude Include="mapper_route_table.h">
+    <ClInclude Include="mapper\mapper.hpp">
       <Filter>mapper</Filter>
     </ClInclude>
-    <ClInclude Include="mapper_route_table.hpp">
+    <ClInclude Include="mapper\mapper_route_table.h">
       <Filter>mapper</Filter>
     </ClInclude>
-    <ClInclude Include="mapper.hpp">
+    <ClInclude Include="mapper\mapper_route_table.hpp">
       <Filter>mapper</Filter>
     </ClInclude>
   </ItemGroup>

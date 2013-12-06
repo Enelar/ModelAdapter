@@ -3,9 +3,9 @@
 #ifndef _MAPPER_H_
 #define _MAPPER_H_
 
-#include "stdafx.h"
-#include "param_info.h"
-#include "param.h"
+#include "../stdafx.h"
+#include "../param_info.h"
+#include "../param.h"
 
 template<typename OriginT>
 class mapper_route;

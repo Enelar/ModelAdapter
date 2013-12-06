@@ -1,5 +1,5 @@
 #include "../PipeReleased/Pipe.h"
-#include "../PipeReleased/mapper.h"
+#include "../PipeReleased/mapper/mapper.h"
 #include <iostream>
 
 struct my_struct
