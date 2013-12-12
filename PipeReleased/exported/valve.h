@@ -28,15 +28,15 @@ namespace original_source_code
   };
 }
 
-#include "../mapper/mapper.h"
+#include "../objects.h"
 
 namespace objects
 {
-  typedef ::mapper<original_source_code::CKlapanW> vavle;
+  typedef ::mapper<original_source_code::CKlapanW> valve;
 }
 
 template<>
-void objects::vavle::UpdateRouteTable(objects::vavle &m)
+void objects::valve::UpdateRouteTable(objects::valve &m)
 {
-  m.Register("closing_percentage", &mapped::VentZ);
+  m.Register("closing_percentage", &mapped::VentZ); // Задание
 }

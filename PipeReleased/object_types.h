@@ -27,7 +27,8 @@ enum OBJECT_TYPES
 {
   VALVE = original_project_source_code::id_Klapan,
   GATE_VALVE = original_project_source_code::id_Zadv,
-  KVO = original_project_source_code::id_KVO,
+  AIR_CONDENSER = original_project_source_code::id_KVO, // конденсатор воздушного охлаждения
   HS = original_project_source_code::id_HS,
-  PUMP = original_project_source_code::id_Pump
+  PUMP = original_project_source_code::id_Pump,
+  SENSOR = original_project_source_code::id_Sensor
 };

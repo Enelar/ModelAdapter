@@ -93,11 +93,18 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="exported\gate_valve.h" />
+    <ClInclude Include="exported\air_condenser.h" />
+    <ClInclude Include="exported\hs.h" />
+    <ClInclude Include="exported\pump.h" />
+    <ClInclude Include="exported\scheme_data.h" />
+    <ClInclude Include="exported\sensor.h" />
     <ClInclude Include="exported\valve.h" />
     <ClInclude Include="mapper\mapper.h" />
     <ClInclude Include="mapper\mapper.hpp" />
     <ClInclude Include="mapper\mapper_route_table.h" />
     <ClInclude Include="mapper\mapper_route_table.hpp" />
+    <ClInclude Include="objects.h" />
     <ClInclude Include="serialised_param.h" />
     <ClInclude Include="info.h" />
     <ClInclude Include="object_interface.h" />
