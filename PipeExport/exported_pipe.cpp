@@ -17,8 +17,14 @@ exported_pipe::~exported_pipe()
   pipe->End();
   delete pipe;
 }
+/*
+int exported_pipe::GetID( const char *name )
+{
+  return 0;
+}
+*/
 
-int exported_pipe::GetPipeElement( unsigned int nType,const char* szName )
+int exported_pipe::GetID( unsigned int nType, const char* szName ) const
 {
   char strName[256];
   lstrcpy( strName, szName );

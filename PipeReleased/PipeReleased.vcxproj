@@ -117,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="object_interface.cpp" />
+    <ClCompile Include="object_types.cpp" />
     <ClCompile Include="pipe.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

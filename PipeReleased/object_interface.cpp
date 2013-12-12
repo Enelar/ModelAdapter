@@ -1,6 +1,7 @@
 #include "object_interface.h"
 
-object_interface::object_interface()
+object_interface::object_interface(word _id)
+: id(_id)
 {
 
 }

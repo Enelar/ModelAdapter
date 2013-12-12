@@ -3,5 +3,5 @@
 void main()
 {
   exported_pipe t("Name");
-  t.GetPipeElement(12, "PV10-229");
+  t.GetID(12, "PV10-229");
 }

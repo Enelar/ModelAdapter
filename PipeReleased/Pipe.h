@@ -12,6 +12,7 @@ public:
   pipe(const std::string &named_pipe);
   virtual ~pipe();
   object_interface Get(const OBJECT_TYPES type, const std::string &name);
+  object_interface Get(const std::string &name);
   object_interface Get(const word id);
 private:
   word GetID(const OBJECT_TYPES type, const std::string &name);

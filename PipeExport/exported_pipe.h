@@ -19,8 +19,10 @@ public:
   exported_pipe(const char *const pipe_name);
   virtual ~exported_pipe();
 
+  //int GetID( const char *name ) const;
+  int GetID( unsigned int type, const char *name ) const;
+
 public:
   void Update();
-  int GetPipeElement( unsigned int nType,const char* szName );
   server_object_container<CShBase> GetServerObject( unsigned int id ) const;
 };

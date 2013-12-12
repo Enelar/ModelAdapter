@@ -32,3 +32,6 @@ enum OBJECT_TYPES
   PUMP = original_project_source_code::id_Pump,
   SENSOR = original_project_source_code::id_Sensor
 };
+
+#include <vector>
+extern std::vector<OBJECT_TYPES> supported_types;

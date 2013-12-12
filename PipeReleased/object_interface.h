@@ -6,7 +6,7 @@ class object_interface
 {
   word id;
   info object_info;
-  object_interface();
+  object_interface(word);
   friend class pipe;
 public:
   word GetID() const;
