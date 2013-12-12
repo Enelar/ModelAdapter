@@ -27,6 +27,7 @@ namespace original_project_source_code
 
 enum OBJECT_TYPES
 {
+  NOTANOBJECT = 0,
   VALVE = original_project_source_code::id_Klapan,
   GATE_VALVE = original_project_source_code::id_Zadv,
   AIR_CONDENSER = original_project_source_code::id_KVO, // конденсатор воздушного охлаждения
@@ -34,5 +35,14 @@ enum OBJECT_TYPES
   PUMP = original_project_source_code::id_Pump,
   SENSOR = original_project_source_code::id_Sensor
 };
+
+template<typename T>
+struct object_id
+{
+  static OBJECT_TYPES tid;
+};
+
+template<typename T>
+OBJECT_TYPES object_id<T>::tid = NOTANOBJECT;
 
 #include "objects.h"

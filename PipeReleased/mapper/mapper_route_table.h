@@ -14,6 +14,8 @@ public:
   template<typename T>
   T OriginT::*GetRef(word) const;
   word GetID(string) const;
+
+  std::map<string, REFACTOR param_info> ShowMap() const;
 private:
   word last_id = 0;
   std::map<string, word> offsets, ids;

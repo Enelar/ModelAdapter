@@ -1,10 +1,16 @@
 #define _MAPPER_ROUTE_TABLE_IMPL
 #include "mapper_route_table.h"
 
+#define __TEMPLATE_HEAD__ template<typename OriginT>
+#define __TEMPLATE_CLASS__ mapper_route<OriginT>
+#define __TEMPLATE_MACROS(code) __TEMPLATE_HEAD__ \
+  code __TEMPLATE_CLASS__
+#define __TEMPLATE__ __TEMPLATE_MACROS(auto)
+#define __TEMPLATE_SPECIAL__ __TEMPLATE_MACROS()
+#define __TEMPLATE_METHOD(additional_template_agruments) __TEMPLATE_MACROS(template< additional_template_agruments > \
+  auto)
 
-template<typename OriginT>
-template<typename T>
-word mapper_route<OriginT>::Register(string name, T OriginT::*ref)
+__TEMPLATE_METHOD(typename T)::Register(string name, T OriginT::*ref) -> word
 {
 #ifdef REFACTOR
   static_assert(std::is_same<T, double>::value, "Multitype implementation required");
@@ -22,15 +28,12 @@ word mapper_route<OriginT>::Register(string name, T OriginT::*ref)
   return last_id;
 }
 
-template<typename OriginT>
-param_info mapper_route<OriginT>::Info(word) const
+__TEMPLATE__::Info(word) const -> param_info
 {
   todo(Info);
 }
 
-template<typename OriginT>
-template<typename T>
-T OriginT::* mapper_route<OriginT>::GetRef(word id) const
+__TEMPLATE_METHOD(typename T)::GetRef(word id) const -> T OriginT::*
 {
   auto name = names.find(id)->second;
   word offset = offsets.find(name)->second;
@@ -46,9 +49,16 @@ T OriginT::* mapper_route<OriginT>::GetRef(word id) const
   return Convert();
 }
 
-template<typename OriginT>
-word mapper_route<OriginT>::GetID(string name) const
+__TEMPLATE__::GetID(string name) const -> word
 {
   auto pair = ids.find(name);
   return pair->second;
+}
+
+__TEMPLATE__::ShowMap() const -> std::map<string, param_info>
+{
+  std::map<string, param_info> info;
+  for each (auto var in names)
+    info.insert({ var.second, { var.second, true, FLOAT } });
+  return info;
 }

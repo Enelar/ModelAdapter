@@ -15,6 +15,7 @@ class mapper
 {
 public:
   typedef OriginT mapped;
+  typedef mapper_route<OriginT> route;
   template<typename T>
   word Register(string name, T OriginT::*);
   param_info Info(word) const;
@@ -37,7 +38,9 @@ private:
 
   mutable mapper_route<OriginT> *route_table = nullptr;
   mapper_route<OriginT> &RouteTable();
+public:
   const mapper_route<OriginT> &RouteTable() const;
+private:
 
   template<typename T>
   T &IntAccess(word);
