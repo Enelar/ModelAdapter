@@ -1,3 +1,5 @@
+#pragma once
+
 #include "scheme_data.h"
 
 namespace original_source_code

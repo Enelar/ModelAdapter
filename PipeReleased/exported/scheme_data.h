@@ -1,3 +1,5 @@
+#pragma once
+
 namespace original_source_code
 {
   struct CShBase
