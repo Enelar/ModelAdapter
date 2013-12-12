@@ -93,6 +93,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="exported\valve.h" />
     <ClInclude Include="mapper\mapper.h" />
     <ClInclude Include="mapper\mapper.hpp" />
     <ClInclude Include="mapper\mapper_route_table.h" />

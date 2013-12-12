@@ -16,6 +16,9 @@
     <Filter Include="mapper">
       <UniqueIdentifier>{6cebe4f2-bacc-4da9-8b4b-f427d5c83dba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="exported">
+      <UniqueIdentifier>{0a47fb89-d45c-49a6-9fa7-1e546c172b49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -59,6 +62,9 @@
     </ClInclude>
     <ClInclude Include="mapper\mapper_route_table.hpp">
       <Filter>mapper</Filter>
+    </ClInclude>
+    <ClInclude Include="exported\valve.h">
+      <Filter>exported</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

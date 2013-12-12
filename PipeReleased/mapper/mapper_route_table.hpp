@@ -6,6 +6,9 @@ template<typename OriginT>
 template<typename T>
 word mapper_route<OriginT>::Register(string name, T OriginT::*ref)
 {
+#ifdef REFACTOR
+  static_assert(std::is_same<T, double>::value, "Multitype implementation required");
+#endif
   auto Offset = [ref]()
   {
     auto mem = reinterpret_cast<const void *>(&ref);

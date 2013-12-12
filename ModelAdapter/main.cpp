@@ -25,5 +25,6 @@ void main()
   my_struct origin;
   mapper<my_struct> a;
   a.Platform(&origin);
+  a.Set<int>("a", 4);
   a.Set<double>("Hard", 5);
 }

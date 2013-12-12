@@ -14,6 +14,7 @@ template<typename OriginT>
 class mapper
 {
 public:
+  typedef OriginT mapped;
   template<typename T>
   word Register(string name, T OriginT::*);
   param_info Info(word) const;
