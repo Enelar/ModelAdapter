@@ -17,7 +17,4 @@ namespace objects
 }
 
 template<>
-void objects::gate_valve::UpdateRouteTable(objects::gate_valve &m)
-{
-  m.Register("closing_percentage", &mapped::VentZ);
-}
+void objects::gate_valve::UpdateRouteTable(objects::gate_valve &m);

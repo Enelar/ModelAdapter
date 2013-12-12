@@ -26,7 +26,4 @@ namespace objects
 }
 
 template<>
-void objects::air_condenser::UpdateRouteTable(objects::air_condenser &m)
-{
-  ////m.Register("display", &mapped::Type_Flags); CKVO::On bit
-}
+void objects::air_condenser::UpdateRouteTable(objects::air_condenser &m);

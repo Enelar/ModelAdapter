@@ -1,4 +1,5 @@
 #include "object_types.h"
+#include "objects.h"
 
 std::vector<OBJECT_TYPES> supported_types = {
   VALVE,
@@ -7,4 +8,8 @@ std::vector<OBJECT_TYPES> supported_types = {
   HS,
   PUMP,
   SENSOR
+};
+
+std::map<OBJECT_TYPES, info> objects_info = {
+  {VALVE, info()}
 };

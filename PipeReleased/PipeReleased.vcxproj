@@ -116,6 +116,7 @@
     <ClInclude Include="value_type.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="exported\object_mapping.cpp" />
     <ClCompile Include="object_interface.cpp" />
     <ClCompile Include="object_types.cpp" />
     <ClCompile Include="pipe.cpp" />

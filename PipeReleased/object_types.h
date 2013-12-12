@@ -1,3 +1,5 @@
+#pragma once
+
 namespace original_project_source_code
 {
   // BaseType.h : 43
@@ -33,5 +35,4 @@ enum OBJECT_TYPES
   SENSOR = original_project_source_code::id_Sensor
 };
 
-#include <vector>
-extern std::vector<OBJECT_TYPES> supported_types;
+#include "objects.h"

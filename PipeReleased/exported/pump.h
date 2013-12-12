@@ -21,7 +21,4 @@ namespace objects
 }
 
 template<>
-void objects::pump::UpdateRouteTable(objects::pump &m)
-{
-  //m.Register("display", &mapped::Type_Flags); CPump::Work bit
-}
+void objects::pump::UpdateRouteTable(objects::pump &m);

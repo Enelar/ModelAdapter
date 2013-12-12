@@ -36,7 +36,4 @@ namespace objects
 }
 
 template<>
-void objects::valve::UpdateRouteTable(objects::valve &m)
-{
-  m.Register("closing_percentage", &mapped::VentZ); // Задание
-}
+void objects::valve::UpdateRouteTable(objects::valve &m);

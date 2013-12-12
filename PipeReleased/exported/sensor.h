@@ -23,7 +23,4 @@ namespace objects
 }
 
 template<>
-void objects::sensor::UpdateRouteTable(objects::sensor &m)
-{
-  m.Register("display", &mapped::ShowValue);
-}
+void objects::sensor::UpdateRouteTable(objects::sensor &m);

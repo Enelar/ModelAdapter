@@ -9,3 +9,11 @@
 #include "exported\scheme_data.h"
 #include "exported\sensor.h"
 #include "exported\valve.h"
+
+#include "object_types.h"
+#include <vector>
+extern std::vector<OBJECT_TYPES> supported_types;
+
+#include "info.h"
+#include <map>
+extern std::map<OBJECT_TYPES, info> objects_info;

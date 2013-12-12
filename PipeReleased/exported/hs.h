@@ -18,7 +18,4 @@ namespace objects
 }
 
 template<>
-void objects::hs::UpdateRouteTable(objects::hs &m)
-{
-  m.Register<bool>("status", &mapped::mOn);
-}
+void objects::hs::UpdateRouteTable(objects::hs &m);
