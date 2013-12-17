@@ -11,7 +11,7 @@ template<typename OriginT>
 class mapper_route;
 
 template<typename OriginT>
-class mapper
+class mapper : ax::object
 {
 public:
   typedef OriginT mapped;
@@ -32,6 +32,8 @@ public:
   void Set(string, const T&);
 
   void Platform(OriginT *) const;
+
+  ~mapper();
 private:
   void Validate() const;
   mutable OriginT *observee = nullptr;

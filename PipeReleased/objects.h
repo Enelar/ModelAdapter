@@ -12,8 +12,8 @@
 
 #include "object_types.h"
 #include <vector>
-extern std::vector<OBJECT_TYPES> supported_types;
+const std::vector<OBJECT_TYPES> &SupportedTypes();
 
 #include "info.h"
 #include <map>
-extern std::map<OBJECT_TYPES, info> objects_info;
+const std::map<OBJECT_TYPES, info> &ObjectsInfo();

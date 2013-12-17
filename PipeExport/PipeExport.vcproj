@@ -60,7 +60,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="F:\_UPS_OMSK\Exe\MnemoWnd.lib"
+				AdditionalOptions="MnemoWnd.lib"
 				LinkIncremental="2"
 				IgnoreAllDefaultLibraries="false"
 				GenerateDebugInformation="true"

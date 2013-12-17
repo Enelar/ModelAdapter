@@ -28,7 +28,7 @@ object_interface pipe::Get(const std::string &name)
 {
   word res = 0;
   
-  for each(OBJECT_TYPES type in supported_types)
+  for each(OBJECT_TYPES type in SupportedTypes())
     if (res = GetID(type, name))
       return object_interface(res);
   throw_message("Object not found");

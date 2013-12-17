@@ -105,3 +105,10 @@ void mapper<OriginT>::UpdateRouteTable(mapper &)
 {
   implementation_required("mapper::UpdateRouteTable should be implemented for all supported classes");
 }
+
+template<typename OriginT>
+mapper<OriginT>::~mapper()
+{
+  if (route_table)
+    delete route_table;
+}
