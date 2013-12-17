@@ -14,18 +14,13 @@ public:
   word GetID() const;
   info GetInfo() const;
 
-  template<typename T>
-  void SetSimpleParam(T value);
-  template<typename T>
-  void SetParam(word param, T value);
+  void SetSimpleParam(serialised_param);
+  void SetParam(word param, serialised_param value);
+  void SetParam(param);
 
-  template<typename T>
-  T GetSimpleParam() const;
-  template<typename T>
-  T GetParam(word param) const;
+  serialised_param GetSimpleParam() const;
+  serialised_param GetParam(word param) const;
 
   void SetBundle(vector<param> data);
   vector<param> GetBundle() const;
 };
-
-#include "object_interface.hpp"

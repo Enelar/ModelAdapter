@@ -87,7 +87,7 @@
     <ClInclude Include="exported\hs.h">
       <Filter>exported</Filter>
     </ClInclude>
-    <ClInclude Include="object_interface.hpp">
+    <ClInclude Include="object_impl.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

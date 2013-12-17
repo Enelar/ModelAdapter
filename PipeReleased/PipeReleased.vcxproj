@@ -105,7 +105,7 @@
     <ClInclude Include="mapper\mapper_route_table.h" />
     <ClInclude Include="mapper\mapper_route_table.hpp" />
     <ClInclude Include="objects.h" />
-    <ClInclude Include="object_interface.hpp" />
+    <ClInclude Include="object_impl.h" />
     <ClInclude Include="serialised_param.h" />
     <ClInclude Include="info.h" />
     <ClInclude Include="object_interface.h" />
