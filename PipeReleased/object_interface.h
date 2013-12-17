@@ -7,8 +7,9 @@
 class object_interface
 {
   word id;
+  OBJECT_TYPES type;
   info object_info;
-  object_interface(word);
+  object_interface(word, OBJECT_TYPES);
   friend class pipe;
 public:
   word GetID() const;

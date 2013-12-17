@@ -1,7 +1,7 @@
 #include "object_interface.h"
 
-object_interface::object_interface(word _id)
-: id(_id)
+object_interface::object_interface(word _id, OBJECT_TYPES _type)
+: id(_id), type(_type)
 {
 
 }
@@ -11,10 +11,11 @@ word object_interface::GetID() const
   return id;
 }
 
+#include "object_types.h"
+
 info object_interface::GetInfo() const
 {
-  REFACTOR // I know this is wrong, and i should return direct reference to DB. But Boss want results NOW.
-  return object_info;
+  return ObjectsInfo().find(type)->second;
 }
 
 void object_interface::SetSimpleParam(serialised_param p)
