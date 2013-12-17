@@ -1,4 +1,4 @@
-#include "Pipe.h"
+#include "pipe.h"
 #include "../PipeExport/exported_pipe.h"
 
 pipe::pipe(const std::string &named_pipe)
@@ -13,8 +13,15 @@ pipe::~pipe()
 
 object_interface pipe::Get(const OBJECT_TYPES type, const std::string &name)
 {
+  auto ObjectPostChange = [type](object_interface &obj)
+  {
+    auto record = ObjectsInfo().find(type);
+    obj.object_info = record->second;
+    return obj;
+  };
+
   word id = GetID(type, name);
-  return Get(id);
+  return ObjectPostChange(Get(id));
 }
 
 object_interface pipe::Get(word _id)
@@ -29,8 +36,7 @@ object_interface pipe::Get(const std::string &name)
   word res = 0;
   
   for each(OBJECT_TYPES type in SupportedTypes())
-    if (res = GetID(type, name))
-      return object_interface(res);
+    return Get(type, name);
   throw_message("Object not found");
 }
 

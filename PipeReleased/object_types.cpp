@@ -44,7 +44,6 @@ namespace
   template<typename T>
   std::pair<OBJECT_TYPES, info> Entry()
   {
-    BREAK_ON_MEMORY_LEAK(284);
     std::pair<OBJECT_TYPES, info> ret;
     OBJECT_TYPES type = object_id<T>::tid;
     ret.first = type;
@@ -94,20 +93,31 @@ public:
   {
     if (stored)
       delete stored;
+    stored = NULL;
+  }
+};
+
+template<typename T> struct generic_lambda
+{
+  template<typename contT>
+  void operator()(contT ret)
+  {
+    ret->insert(Entry<T>());
   }
 };
 
 singletone<std::map<OBJECT_TYPES, info>> objects_info(
   []()
   {
-    return NEW std::map<OBJECT_TYPES, info>{
-      Entry<objects::valve>(),
-        Entry<objects::gate_valve>(),
-        Entry<objects::air_condenser>(),
-        Entry<objects::hs>(),
-        Entry<objects::pump>(),
-        Entry<objects::sensor>(),
-    };
+    auto ret = NEW std::map<OBJECT_TYPES, info>();
+
+    ret->insert(Entry<objects::valve>());
+    ret->insert(Entry<objects::gate_valve>());
+    ret->insert(Entry<objects::air_condenser>());
+    ret->insert(Entry<objects::hs>());
+    ret->insert(Entry<objects::pump>());
+    ret->insert(Entry<objects::sensor>());
+    return ret;
   }
 );
 

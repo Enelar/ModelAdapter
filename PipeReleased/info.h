@@ -9,4 +9,9 @@ struct info
   word object_type_id;
   bool is_simple;
   vector<param_info> params;
+
+  ~info()
+  {
+    is_simple = false;
+  }
 };
