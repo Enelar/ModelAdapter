@@ -18,5 +18,9 @@ private: // In case of desync temporary unavaible
   object_interface Get(const word id);
 private:
   word GetID(const OBJECT_TYPES type, const std::string &name);
+public:
   info GetInfoByObjectType(const OBJECT_TYPES type);
+
+  vector<param> GetRaw( const object_interface & );
+  void SetRaw(const object_interface &, vector<param>);
 };

@@ -54,3 +54,18 @@ word pipe::GetID(const OBJECT_TYPES type, const std::string &name)
 {
   return ep->GetID(type, name.c_str());
 }
+
+vector<param> GetRaw(const object_interface &obj)
+{
+  implementation_required("Get full object information from model. Exported pipe needed");
+}
+
+void SetRaw(const object_interface &obj, vector<param> data)
+{
+  auto info = obj.GetInfo();
+  for each (auto p in data)
+  {
+    throw_sassert(!info.params[1].readonly, "Write protection on this parameter");
+  }
+  implementation_required("Waiting for exported pipe realisation");
+}
