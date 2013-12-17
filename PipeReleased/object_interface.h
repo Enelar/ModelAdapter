@@ -1,3 +1,5 @@
+#pragma once
+
 #include "stdafx.h"
 #include "info.h"
 #include "param.h"
@@ -24,5 +26,6 @@ public:
 
   void SetBundle(vector<param> data);
   vector<param> GetBundle() const;
-
 };
+
+#include "object_interface.hpp"

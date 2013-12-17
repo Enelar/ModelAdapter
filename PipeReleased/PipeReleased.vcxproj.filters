@@ -87,6 +87,9 @@
     <ClInclude Include="exported\hs.h">
       <Filter>exported</Filter>
     </ClInclude>
+    <ClInclude Include="object_interface.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pipe.cpp">
