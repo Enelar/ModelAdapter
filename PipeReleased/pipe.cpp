@@ -21,14 +21,20 @@ object_interface pipe::Get(const OBJECT_TYPES type, const std::string &name)
   };
 
   word id = GetID(type, name);
-  return ObjectPostChange(Get(id));
+  return ObjectPostChange(Get(type, id));
+}
+
+object_interface pipe::Get(const OBJECT_TYPES type, const word id)
+{
+  throw_assert(id != 0);
+  throw_assert(type != NOTANOBJECT);
+  object_interface obj(id, type);
+  return obj;
 }
 
 object_interface pipe::Get(word _id)
 {
-  throw_assert(_id != 0);
-  object_interface obj(_id);
-  return obj;
+  todo(Enumerate over types and find type);
 }
 
 object_interface pipe::Get(const std::string &name)
@@ -36,7 +42,11 @@ object_interface pipe::Get(const std::string &name)
   word res = 0;
   
   for each(OBJECT_TYPES type in SupportedTypes())
-    return Get(type, name);
+  {
+    auto t = Get(type, name);
+    if (t.GetID())
+      return t;
+  }
   throw_message("Object not found");
 }
 

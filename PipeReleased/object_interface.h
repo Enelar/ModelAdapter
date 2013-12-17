@@ -3,6 +3,7 @@
 #include "stdafx.h"
 #include "info.h"
 #include "param.h"
+#include "object_types.h"
 
 class object_interface
 {

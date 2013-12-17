@@ -11,8 +11,6 @@ word object_interface::GetID() const
   return id;
 }
 
-#include "object_types.h"
-
 info object_interface::GetInfo() const
 {
   return ObjectsInfo().find(type)->second;
