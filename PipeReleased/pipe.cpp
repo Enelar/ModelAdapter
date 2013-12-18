@@ -55,17 +55,19 @@ word pipe::GetID(const OBJECT_TYPES type, const std::string &name)
   return ep->GetID(type, name.c_str());
 }
 
-vector<param> GetRaw(const object_interface &obj)
+vector<param> pipe::GetRaw(const object_interface &obj)
 {
   implementation_required("Get full object information from model. Exported pipe needed");
 }
 
-void SetRaw(const object_interface &obj, vector<param> data)
+void pipe::SetRaw(const object_interface &obj, vector<param> data)
 {
   auto info = obj.GetInfo();
   for each (auto p in data)
   {
     throw_sassert(!info.params[1].readonly, "Write protection on this parameter");
+    double t, t2;
+    string server_mapped_name;
+    ep->SetServerTile(obj.GetID(), server_mapped_name.c_str(), original_source_code::enumValueDbl, &t, &t2);
   }
-  implementation_required("Waiting for exported pipe realisation");
 }

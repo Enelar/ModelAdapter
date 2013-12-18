@@ -62,3 +62,16 @@ server_object_container<CShBase> exported_pipe::GetServerObject( unsigned int id
 {
   return *pipe->Sh(id);
 }
+
+void exported_pipe::SetServerTile( unsigned int id, const char *parameter_name, original_source_code::EValueType type, const void *value, const void *prev )
+{
+  if (!id)
+    return;
+  SSendToModel send;
+  size_t len = strlen(parameter_name);
+  if (len >= sizeof(send.szValue) / sizeof(send.szValue[0]))
+    return;
+  memcpy(send.szValue, parameter_name, len + 1);
+  send.Set(static_cast<::EValueType>(type), prev, value);
+  pipe->SendData(id, send);
+}
