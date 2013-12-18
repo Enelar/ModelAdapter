@@ -32,11 +32,13 @@ public:
   void Set(string, const T&);
 
   void Platform(OriginT *) const;
+  void Platform(const OriginT *) const;
 
   ~mapper();
 private:
   void Validate() const;
   mutable OriginT *observee = nullptr;
+  mutable bool const_platform;
 
   mutable mapper_route<OriginT> *route_table = nullptr;
   mapper_route<OriginT> &RouteTable();

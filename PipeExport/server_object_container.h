@@ -34,7 +34,20 @@ public:
     return memory;
   }
 
+  T &operator*()
+  {
+    return reinterpret_cast<T *>(memory);
+  }
   T *operator->()
+  {
+    return reinterpret_cast<T *>(memory);
+  }
+
+  const T &operator*() const
+  {
+    return *reinterpret_cast<T *>(memory);
+  }
+  const T *operator->() const
   {
     return reinterpret_cast<T *>(memory);
   }

@@ -5,6 +5,8 @@
 struct serialisation_failed
 {};
 
+#include <tuple>
+
 template<class Tuple, int level = -1>
 struct serialisation_route
 {

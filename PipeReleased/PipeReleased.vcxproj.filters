@@ -110,5 +110,8 @@
     <ClCompile Include="exported\object_mapping.cpp">
       <Filter>exported</Filter>
     </ClCompile>
+    <ClCompile Include="server_serialisator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

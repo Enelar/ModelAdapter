@@ -41,6 +41,7 @@ template<typename OriginT>
 template<typename T>
 void mapper<OriginT>::Set(word id, const T& data)
 {
+  throw_sassert(!const_platform, "Object mapped as constant, you cant change it");
   IntAccess<T>(id) = data;
 }
 
@@ -56,6 +57,14 @@ template<typename OriginT>
 void mapper<OriginT>::Platform(OriginT *platform) const
 {
   observee = platform;
+  const_platform = false;
+}
+
+template<typename OriginT>
+void mapper<OriginT>::Platform(const OriginT *platform) const
+{
+  Platform(const_cast<OriginT *>(platform));
+  const_platform = true;
 }
 
 template<typename OriginT>
