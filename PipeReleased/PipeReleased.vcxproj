@@ -106,6 +106,7 @@
     <ClInclude Include="mapper\mapper_route_table.hpp" />
     <ClInclude Include="objects.h" />
     <ClInclude Include="object_impl.h" />
+    <ClInclude Include="serialisation_route.h" />
     <ClInclude Include="serialised_param.h" />
     <ClInclude Include="info.h" />
     <ClInclude Include="object_interface.h" />
@@ -113,6 +114,7 @@
     <ClInclude Include="param.h" />
     <ClInclude Include="param_info.h" />
     <ClInclude Include="pipe.h" />
+    <ClInclude Include="server_serialisator.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="value_type.h" />
   </ItemGroup>

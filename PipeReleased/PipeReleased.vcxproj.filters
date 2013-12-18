@@ -90,6 +90,12 @@
     <ClInclude Include="object_impl.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="serialisation_route.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="server_serialisator.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pipe.cpp">
