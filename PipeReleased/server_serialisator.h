@@ -16,3 +16,5 @@ bool basic_server_serializator(const server_object_container<typename T::mapped>
 
 template<>
 bool server_serializator<objects::valve>(const server_object_container<objects::valve::mapped> server_obj, vector<param> &ret);
+template<>
+bool server_serializator<objects::gate_valve>(const server_object_container<objects::gate_valve::mapped> server_obj, vector<param> &ret);

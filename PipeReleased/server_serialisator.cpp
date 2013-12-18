@@ -2,16 +2,56 @@
 #include "server_serialisator.h"
 #include "mapper\mapper.h"
 
+#include "../ASN1/ASN1/asn1.h"
+
+#include "../ASN1/ASN1/internal_header.h"
+
+using namespace asn1;
+REFACTOR
+struct dummy_double : asn1::entity
+{
+  double t;
+  dummy_double(double _t)
+  : entity(asn1::inditifier(inditifier::APPLICATION, false, VALUE_TYPE::FLOAT)),  t(_t)
+  {
+
+  }
+
+  operator std::string() const
+  {
+    string ret;
+
+    ConCat(ret, type);
+    ConCat(ret, EncodeLength());
+
+    const entity::byte *_content = reinterpret_cast<const entity::byte *>(&t);
+    ConCat(ret, std::string((char *)_content));
+    return ret;
+  }
+  
+  int Length() const
+  {
+    return sizeof(double);
+  }
+  
+  LENGTH_TYPE LengthType() const
+  {
+    return LENGTH_TYPE::DEFINITE;
+  }
+};
+
 template<typename T>
 bool basic_server_serializator(const server_object_container<typename T::mapped> server_obj, vector<param> &ret)
 {
-  const objects::valve m;
+  const T m;
   m.Platform(&*server_obj);
 
-  auto SerializeParam = [](double val)
+  auto SerializeParam = [](double val) -> string
   {
-    todo("Serialize with ASN1");
-    return "";
+    asn1::stream str;
+    dummy_double d(val);
+    str << d;    
+    return str;
   };
 
   int id = 0;
@@ -32,4 +72,10 @@ template<>
 bool server_serializator<objects::valve>(const server_object_container<objects::valve::mapped> server_obj, vector<param> &ret)
 {
   return basic_server_serializator<objects::valve>(server_obj, ret);
+}
+
+template<>
+bool server_serializator<objects::gate_valve>(const server_object_container<objects::gate_valve::mapped> server_obj, vector<param> &ret)
+{
+  return basic_server_serializator<objects::gate_valve>(server_obj, ret);
 }

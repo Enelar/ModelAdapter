@@ -126,6 +126,11 @@
     <ClCompile Include="pipe.cpp" />
     <ClCompile Include="server_serialisator.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ASN1\ASN1\ASN1.vcxproj">
+      <Project>{5f0d96d1-d3cc-47de-b28e-14b9919b50d8}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
