@@ -75,6 +75,9 @@ vector<param> pipe::GetRaw(const object_interface &obj)
   }
   catch (serialisation_failed)
   {
+#if _DEBUG_
+    throw_message("Server object didnt supported yet");
+#endif
     return{};
   }
   dead_space();
