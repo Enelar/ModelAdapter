@@ -42,7 +42,7 @@ object_interface pipe::Get(const std::string &name)
 {
   word res = 0;
   
-  for each(OBJECT_TYPES type in SupportedTypes())
+  for (OBJECT_TYPES type : SupportedTypes())
   {
     auto t = Get(type, name);
     if (t.GetID())
@@ -87,7 +87,7 @@ vector<param> pipe::GetRaw(const object_interface &obj)
 void pipe::SetRaw(const object_interface &obj, vector<param> data)
 {
   auto info = obj.GetInfo();
-  for each (auto p in data)
+  for (auto p : data)
   {
     throw_sassert(!info.params[1].readonly, "Write protection on this parameter");
     double t, t2;

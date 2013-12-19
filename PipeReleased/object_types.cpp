@@ -15,7 +15,7 @@ namespace
     ret.object_type_id = object_id<objects::valve>::tid;
     throw_assert(ret.object_type_id != NOTANOBJECT);
 
-    for each (auto el in map)
+    for (auto el : map)
     {
       param_info info;
       info.name = el.first;

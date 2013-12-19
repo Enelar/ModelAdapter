@@ -58,7 +58,7 @@ __TEMPLATE__::GetID(string name) const -> word
 __TEMPLATE__::ShowMap() const -> std::map<string, param_info>
 {
   std::map<string, param_info> info;
-  for each (auto var in names)
+  for (auto var : names)
     info.insert({ var.second, { var.second, true, FLOAT } });
   return info;
 }
