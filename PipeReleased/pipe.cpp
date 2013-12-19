@@ -4,6 +4,7 @@
 pipe::pipe(const std::string &named_pipe)
 {
   ep = new exported_pipe(named_pipe.c_str());
+  ref = new store_type(this);
 }
 
 pipe::~pipe()
@@ -93,4 +94,18 @@ void pipe::SetRaw(const object_interface &obj, vector<param> data)
     string server_mapped_name;
     ep->SetServerTile(obj.GetID(), server_mapped_name.c_str(), original_source_code::enumValueDbl, &t, &t2);
   }
+}
+
+pipe::store_type pipe::Make()
+{
+  auto p = NEW MEMLEAK pipe();
+  throw_assert(p->ref);
+  return *p->ref;
+}
+
+void pipe::Shutdown()
+{
+  throw_assert(!shutdowned);
+  shutdowned = true;
+  delete ref;
 }
