@@ -29,7 +29,7 @@ object_interface pipe::Get(const OBJECT_TYPES type, const word id)
 {
   throw_assert(id != 0);
   throw_assert(type != NOTANOBJECT);
-  object_interface obj(id, type);
+  object_interface obj(*this, id, type);
   return obj;
 }
 
@@ -100,12 +100,17 @@ pipe::store_type pipe::Make()
 {
   auto p = NEW MEMLEAK pipe();
   throw_assert(p->ref);
-  return *p->ref;
+  return p->Ref();
 }
 
 void pipe::Shutdown()
 {
-  throw_assert(!shutdowned);
+  delete &Ref();
   shutdowned = true;
-  delete ref;
+}
+
+pipe::store_type &pipe::Ref() const
+{
+  throw_assert(!shutdowned);
+  return *ref;
 }

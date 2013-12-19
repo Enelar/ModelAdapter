@@ -4,14 +4,16 @@
 #include "info.h"
 #include "param.h"
 #include "object_types.h"
+#include "pipe.h"
 
 class object_interface
 {
   word id;
   OBJECT_TYPES type;
   info object_info;
-  object_interface(word, OBJECT_TYPES);
+  object_interface(const pipe &, word, OBJECT_TYPES);
   friend class pipe;
+  pipe::store_type p;
 public:
   word GetID() const;
   info GetInfo() const;

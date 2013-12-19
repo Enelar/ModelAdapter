@@ -1,8 +1,10 @@
+#pragma once
+
 #include <string>
 #include "object_types.h"
-#include "object_interface.h"
 #include <memory>
 
+class object_interface;
 class exported_pipe;
 class pipe
 {
@@ -12,6 +14,8 @@ private:
   store_type *ref;
   exported_pipe *ep;
   bool shutdowned = false;
+  store_type &Ref() const;
+  friend class object_interface;
 private:
   pipe() : pipe("Главная")
   {}
@@ -34,3 +38,5 @@ public:
   vector<param> GetRaw( const object_interface & );
   void SetRaw(const object_interface &, vector<param>);
 };
+
+#include "object_interface.h"

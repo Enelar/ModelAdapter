@@ -1,7 +1,7 @@
 #include "object_interface.h"
 
-object_interface::object_interface(word _id, OBJECT_TYPES _type)
-: id(_id), type(_type)
+object_interface::object_interface( const pipe &_pipe, word _id, OBJECT_TYPES _type)
+: id(_id), type(_type), p(_pipe.Ref())
 {
 
 }
