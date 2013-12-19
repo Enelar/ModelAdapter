@@ -37,5 +37,10 @@ serialised_param object_interface::GetSimpleParam() const
 }
 serialised_param object_interface::GetParam(word param) const
 {
-  todo("Get param bind to model");
+  auto info = ObjectsInfo().find(type)->second;
+  throw_sassert(info.params.size() > param, "Subscript out of range");
+  auto params = p->GetRaw(*this);
+  throw_sassert(info.params.size() == params.size(), "Object information about parameters desync");
+  throw_sassert(params[param].raw.t == info.params[param].type, "Object information about parameter types desync");
+  return params[param].raw;
 }
