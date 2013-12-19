@@ -2,12 +2,12 @@
 #include "objects.h"
 
 
-OBJECT_TYPES object_id<objects::valve>::tid = VALVE;
-OBJECT_TYPES object_id<objects::gate_valve>::tid = GATE_VALVE;
-OBJECT_TYPES object_id<objects::air_condenser>::tid = AIR_CONDENSER;
-OBJECT_TYPES object_id<objects::hs>::tid = HS;
-OBJECT_TYPES object_id<objects::pump>::tid = PUMP;
-OBJECT_TYPES object_id<objects::sensor>::tid = SENSOR;
+const OBJECT_TYPES object_id<objects::valve>::tid = VALVE;
+const OBJECT_TYPES object_id<objects::gate_valve>::tid = GATE_VALVE;
+const OBJECT_TYPES object_id<objects::air_condenser>::tid = AIR_CONDENSER;
+const OBJECT_TYPES object_id<objects::hs>::tid = HS;
+const OBJECT_TYPES object_id<objects::pump>::tid = PUMP;
+const OBJECT_TYPES object_id<objects::sensor>::tid = SENSOR;
 
 
 namespace
@@ -20,7 +20,7 @@ namespace
     auto map = a.RouteTable(). ShowMap();
     ret.is_simple = map.size() == 1;
     ret.object_type = typeid(ported_name).name();
-    ret.object_type_id = object_id<ported_name>::tid;
+    ret.object_type_id = object_id<objects::valve>::tid;
     throw_assert(ret.object_type_id != NOTANOBJECT);
 
     for each (auto el in map)

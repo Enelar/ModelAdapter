@@ -39,10 +39,10 @@ enum OBJECT_TYPES
 template<typename T>
 struct object_id
 {
-  static OBJECT_TYPES tid;
+  const static OBJECT_TYPES tid;
 };
 
 template<typename T>
-OBJECT_TYPES object_id<T>::tid = NOTANOBJECT;
+const OBJECT_TYPES object_id<T>::tid = NOTANOBJECT;
 
 #include "objects.h"
