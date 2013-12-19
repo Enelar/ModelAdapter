@@ -25,7 +25,8 @@ struct dummy_double : asn1::entity
     ConCat(ret, EncodeLength());
 
     const entity::byte *_content = reinterpret_cast<const entity::byte *>(&t);
-    ConCat(ret, std::string((char *)_content));
+    for (word i = 0; i < sizeof(t); i++)
+      ret += _content[i];
     return ret;
   }
   
@@ -41,7 +42,7 @@ struct dummy_double : asn1::entity
 };
 
 template<typename T>
-bool basic_server_serializator(const server_object_container<typename T::mapped> server_obj, vector<param> &ret)
+bool basic_server_serializator(const server_object_container<typename T::mapped> &server_obj, vector<param> &ret)
 {
   const T m;
   m.Platform(&*server_obj);
@@ -69,13 +70,13 @@ bool basic_server_serializator(const server_object_container<typename T::mapped>
 }
 
 template<>
-bool server_serializator<objects::valve>(const server_object_container<objects::valve::mapped> server_obj, vector<param> &ret)
+bool server_serializator<objects::valve>(const server_object_container<objects::valve::mapped> &server_obj, vector<param> &ret)
 {
   return basic_server_serializator<objects::valve>(server_obj, ret);
 }
 
 template<>
-bool server_serializator<objects::gate_valve>(const server_object_container<objects::gate_valve::mapped> server_obj, vector<param> &ret)
+bool server_serializator<objects::gate_valve>(const server_object_container<objects::gate_valve::mapped> &server_obj, vector<param> &ret)
 {
   return basic_server_serializator<objects::gate_valve>(server_obj, ret);
 }

@@ -4,6 +4,7 @@
 
 void main()
 {
+  throw_assert(object_id<objects::valve>::tid != NOTANOBJECT);
   auto p = pipe::Make();
   object_interface obj = p->Get(VALVE, "PV10-229");
   std::cout << obj.GetID() << std::endl;

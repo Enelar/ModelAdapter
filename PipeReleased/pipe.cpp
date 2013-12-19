@@ -67,7 +67,7 @@ vector<param> pipe::GetRaw(const object_interface &obj)
   
   try
   {
-    auto ret = [=]()
+    auto ret = [&]()
     {
       serialisation_route<supported_server_objects> t;
       return t(server_object, obj.type);

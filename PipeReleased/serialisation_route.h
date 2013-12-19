@@ -10,7 +10,12 @@ struct serialisation_failed
 template<class Tuple, int level = -1>
 struct serialisation_route
 {
-  vector<param> operator()(const server_object_container<CShBase> obj, OBJECT_TYPES type)
+  template<typename T>
+  vector<param> Helper(const server_object_container<T> &obj)
+  {
+    return{};
+  }
+  vector<param> operator()(const server_object_container<CShBase> &obj, OBJECT_TYPES type)
   {
     static_assert(level >= 0, "Wrong template resolution");
     const int tuple_size = std::tuple_size<Tuple>::value;
@@ -18,12 +23,15 @@ struct serialisation_route
     typedef std::tuple_element<level - 1, Tuple>::type selected_type;
     const int obj_id = object_id<selected_type>::tid;
 
+    if (obj_id == NOTANOBJECT)
+      throw_message(typeid(selected_type).name());
+
     if (obj_id != type)
-      return [=]()
-    {
-      serialisation_route<Tuple, level - 1> t;
-      return t(obj, type);
-    }();
+      return [&]()
+      {
+        serialisation_route<Tuple, level - 1> t;
+        return t(obj, type);
+      }();
 
     vector<param> ret;
     throw_assert(server_serializator<selected_type>(obj, ret));
@@ -34,7 +42,7 @@ struct serialisation_route
 template<class Tuple>
 struct serialisation_route<Tuple, -1>
 {
-  vector<param> operator()(const server_object_container<CShBase> data, OBJECT_TYPES type)
+  vector<param> operator()(const server_object_container<CShBase> &data, OBJECT_TYPES type)
   {
     const int size = std::tuple_size<Tuple>::value;
     serialisation_route<Tuple, size> t;
@@ -45,7 +53,7 @@ struct serialisation_route<Tuple, -1>
 template<class Tuple>
 struct serialisation_route<Tuple, 0>
 {
-  vector<param> operator()(const server_object_container<CShBase> data, OBJECT_TYPES type)
+  vector<param> operator()(const server_object_container<CShBase> &data, OBJECT_TYPES type)
   {
     throw serialisation_failed();
   }

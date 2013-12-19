@@ -8,7 +8,15 @@ public:
   {}
   server_object_container( int _size ) : memory(new unsigned char[real_size]), real_size(_size)
   {}
+  server_object_container(const server_object_container &obj) : memory(new unsigned char[real_size]), real_size(obj.real_size)
+  {
+    Import(obj.memory);
+  }
   server_object_container( const T &obj ) : memory(new unsigned char[real_size]), real_size(sizeof(T))
+  {
+    Import(&obj);
+  }
+  server_object_container(const T &obj, const int size) : memory(new unsigned char[real_size]), real_size(size)
   {
     Import(&obj);
   }

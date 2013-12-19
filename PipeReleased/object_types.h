@@ -42,7 +42,14 @@ struct object_id
   const static OBJECT_TYPES tid;
 };
 
+#include "objects.h"
+
+// Because minimal rebuild bug, that should be inited in every .obj file
 template<typename T>
 const OBJECT_TYPES object_id<T>::tid = NOTANOBJECT;
-
-#include "objects.h"
+const OBJECT_TYPES object_id<objects::valve>::tid = VALVE;
+const OBJECT_TYPES object_id<objects::gate_valve>::tid = GATE_VALVE;
+const OBJECT_TYPES object_id<objects::air_condenser>::tid = AIR_CONDENSER;
+const OBJECT_TYPES object_id<objects::hs>::tid = HS;
+const OBJECT_TYPES object_id<objects::pump>::tid = PUMP;
+const OBJECT_TYPES object_id<objects::sensor>::tid = SENSOR;

@@ -60,7 +60,8 @@ namespace
 
 server_object_container<CShBase> exported_pipe::GetServerObject( unsigned int id ) const
 {
-  return *pipe->Sh(id);
+  CShBase *obj = pipe->Sh(id);
+  return server_object_container<CShBase>(*obj, obj->m_nSize);
 }
 
 void exported_pipe::SetServerTile( unsigned int id, const char *parameter_name, original_source_code::EValueType type, const void *value, const void *prev )
