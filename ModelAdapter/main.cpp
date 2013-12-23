@@ -2,7 +2,8 @@
 #include "../PipeReleased/objects.h"
 #include <iostream>
 
-void main()
+
+void f()
 {
   throw_assert(object_id<objects::valve>::tid != NOTANOBJECT);
   auto p = pipe::Make();
@@ -14,4 +15,20 @@ void main()
   //value += 10; // like unity
   //obj.SetParam(0, value);
   p->Shutdown();
+}
+
+#include "../ModelProxy/Header.h"
+
+void f1()
+{
+  int model = Construct();
+  int handle = Get(model, "PV10-229");
+  double param = GetDouble(handle, 0);
+  
+}
+
+void main()
+{
+  f();
+  f1();
 }
