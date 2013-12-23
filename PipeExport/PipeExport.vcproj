@@ -186,12 +186,20 @@
 				RelativePath=".\exported_pipe.h"
 				>
 			</File>
+			<File
+				RelativePath=".\header.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath=".\server_object_container.cpp"
+				>
+			</File>
 			<File
 				RelativePath=".\server_object_container.h"
 				>

@@ -4,4 +4,5 @@ void main()
 {
   exported_pipe t("Name");
   t.GetID(12, "PV10-229");
+  t.GetServerObject(0);
 }

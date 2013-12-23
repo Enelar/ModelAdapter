@@ -1,8 +1,4 @@
-#ifdef TVRPROXY_EXPORTS
-#define _API __declspec(dllexport)
-#else
-#define _API __declspec(dllimport)
-#endif
+#include "header.h"
 
 #include "server_object_container.h"
 #include "value_types.h"
