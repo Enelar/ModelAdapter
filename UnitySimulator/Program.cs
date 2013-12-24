@@ -49,10 +49,21 @@ namespace UnitySimulator
 
   unsafe class Program
   {
+    public static char[] ToASCII(string str)
+    {
+      char[] ret = new char[str.Length + 1];
+      int i;
+      for (i = 0; i < str.Length; i++)
+        ret[i] = str[i];
+      ret[str.Length] = '\0';
+      return ret;
+    }
+
     static void Main(string[] args)
     {
       Program p = new Program();
-      Object obj = p.Get("PV10-229");
+     // int a = p.GetID("421415rfdgtrg");
+      Object obj = p.Get("Z-15");
       double test = obj.GetDouble();
     }
 
@@ -96,12 +107,12 @@ namespace UnitySimulator
 
     public int GetID(string name)
     {
-      return GetID(handle, name.ToCharArray());
+      return GetID(handle, ToASCII(name));
     }
 
     public Object Get(string name)
     {
-      return new Object(Get(handle, name.ToCharArray()));
+      return new Object(Get(handle, ToASCII(name)));//name.ToCharArray()));
     }
 
     public Object Get(int id)
