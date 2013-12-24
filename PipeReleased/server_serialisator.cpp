@@ -41,11 +41,14 @@ struct dummy_double : asn1::entity
   }
 };
 
+#include "exported\scheme_data.h"
+
 template<typename T>
 bool basic_server_serializator(const server_object_container<typename T::mapped> &server_obj, vector<param> &ret)
 {
   const T m;
-  m.Platform(&*server_obj);
+  const ub *mem = server_obj.Memory() + sizeof(original_source_code::CShBase) + sizeof(original_source_code::CFlags);
+  m.Platform(reinterpret_cast<typename const T::mapped *>(mem));
 
   auto SerializeParam = [](double val) -> string
   {

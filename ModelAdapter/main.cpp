@@ -7,7 +7,7 @@ void f()
 {
   throw_assert(object_id<objects::valve>::tid != NOTANOBJECT);
   auto p = pipe::Make();
-  object_interface obj = p->Get(VALVE, "PV10-229");
+  object_interface obj = p->Get(VALVE, "Z-15");
   std::cout << obj.GetID() << std::endl;
 
   auto info = obj.GetInfo();
@@ -22,13 +22,14 @@ void f()
 void f1()
 {
   int model = Construct();
-  int handle = Get(model, "PV10-229");
+  int handle = Get(model, "Z-15");
   double param = GetDouble(handle, 0);
-  
+  DestructObject(handle);
+  Destruct(model);
 }
 
 void main()
 {
-  f();
+  //f();
   f1();
 }

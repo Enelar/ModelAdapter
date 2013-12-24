@@ -2,7 +2,7 @@
 
 void main()
 {
-  exported_pipe t("Name");
-  t.GetID(12, "PV10-229");
-  t.GetServerObject(0);
+  exported_pipe t("Главная");
+  int id = t.GetID(12, "Z-15");
+  t.GetServerObject(id);
 }

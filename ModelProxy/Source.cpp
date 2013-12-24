@@ -7,6 +7,7 @@ model::model()
 
 model::~model()
 {
+  (*p)->Shutdown();
   delete p;
 }
 

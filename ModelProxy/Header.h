@@ -50,6 +50,7 @@ struct model
   object Get(const char *str);
   object Get(int);
   int GetID(const char *str);
+
 private:
   pipe::store_type *p;
   pipe::store_type Pipe() const;

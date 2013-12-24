@@ -29,6 +29,9 @@ int exported_pipe::GetID( unsigned int nType, const char* szName ) const
   char strName[256];
   lstrcpy( strName, szName );
   int nNumber=pipe->FindObj(nType,szName,strName);
+  pipe->End();
+  if (pipe->Sh(nNumber)->RetCode != CShBase::rcOK)
+    return 0;
   return nNumber;
 }
 
