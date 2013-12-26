@@ -42,6 +42,8 @@ PROXY_API double GetDouble(int, int);
 PROXY_API double GetDouble(int, const char *);
 PROXY_API double GetSimpleDouble(int);
 
+PROXY_API void SetDouble(int, int, double);
+
 struct model
 {
   model();

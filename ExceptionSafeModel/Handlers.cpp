@@ -18,6 +18,7 @@ static decltype(&GetID) _GetID;
 static double(*_GetDouble)(int, int);
 static double(*_GetDoubleByStr)(int, const char *);
 static decltype(&GetSimpleDouble) _GetSimpleDouble;
+static decltype(&SetDouble) _SetDouble;
 
 #define AUTO_CAST(var) var = (decltype(var))
 #define EXPORT(func, spec) AUTO_CAST(GLUE(_,func))(GetProcAddress(DLL, "?" TOSTRING(func) "@@" spec "@Z")); if (!GLUE(_,func)) printf("%i CantLoad " TOSTRING(func) "\n", GetLastError())
@@ -44,6 +45,8 @@ bool LoadDll()
   AUTO_CAST(_GetByStr)(GetProcAddress(DLL, "?Get@@YAHHPBD@Z"));
   EXPORT(GetDouble, "YANHH");
   AUTO_CAST(_GetDoubleByStr)(GetProcAddress(DLL, "?GetDouble@@YAHHPBD@Z"));
+
+  EXPORT(SetDouble, "YAXHHN");
 
   return !!DLL;
 }
@@ -223,4 +226,10 @@ EXCEPTIONSAFEMODEL_API bool GetLastExceptionString(wchar_t *buf, int max_len)
   while (max_len && (*buf++ = *src++))
     max_len--;
   return exceptionstr != "";
+}
+
+EXCEPTIONSAFEMODEL_API void NESetDouble(int obj, int id, double val)
+{
+  if (status) return;
+  TRY_BLOCK(_SetDouble(obj, id, val));
 }

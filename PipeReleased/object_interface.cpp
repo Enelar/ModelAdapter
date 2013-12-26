@@ -26,9 +26,9 @@ void object_interface::SetParam(word param, serialised_param value)
   SetParam({ param, value });
 }
 
-void object_interface::SetParam(param p)
+void object_interface::SetParam(param par)
 {
-  todo("Set param bind to model");
+  p->SetRaw(*this, { par });
 }
 
 serialised_param object_interface::GetSimpleParam() const

@@ -94,6 +94,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DummyDouble.h" />
     <ClInclude Include="exported\gate_valve.h" />
     <ClInclude Include="exported\air_condenser.h" />
     <ClInclude Include="exported\hs.h" />

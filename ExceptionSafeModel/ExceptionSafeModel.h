@@ -49,3 +49,5 @@ EXCEPTIONSAFEMODEL_API double NEGetSimpleDouble(int obj);
 EXCEPTIONSAFEMODEL_API int Status();
 EXCEPTIONSAFEMODEL_API bool GetLastExceptionString( char *, int );
 EXCEPTIONSAFEMODEL_API bool GetLastExceptionString(wchar_t *, int);
+
+EXCEPTIONSAFEMODEL_API void NESetDouble(int obj, int id, double);

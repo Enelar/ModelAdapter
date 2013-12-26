@@ -1,7 +1,7 @@
 #include "Header.h"
 
 #define MOD reinterpret_cast<model *>(obj)
-#define OBJ reinterpret_cast<object *>(obj)->obj
+#define OBJ reinterpret_cast<::object *>(obj)->obj
 
 PROXY_API int Construct()
 {
@@ -55,4 +55,16 @@ PROXY_API double GetDouble(int obj, const char *name)
 PROXY_API double GetSimpleDouble(int obj)
 {
   return GetDouble(obj, 0);
+}
+
+#include "../PipeReleased/DummyDouble.h"
+
+PROXY_API void SetDouble(int obj, int id, double val)
+{
+  param p;
+  p.id = id;
+  p.raw.t = FLOAT;
+  dummy_double d(val);
+  p.raw.asn1_encoded_string = d;
+  OBJ->SetParam(p);
 }

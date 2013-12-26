@@ -19,7 +19,7 @@ namespace
     {
       param_info info;
       info.name = el.first;
-      info.readonly = true;
+      info.readonly = false;
       info.type = VALUE_TYPE::FLOAT;
       ret.params.push_back(info);
     }

@@ -16,11 +16,10 @@ int _tmain(int argc, _TCHAR* argv[])
   //ch = 
   wchar_t str[100];
   auto ch = GetLastExceptionString(str, 100);
-  while (1)
-  {
-    double d = NEGetDouble(obj, 0);
-    printf("%lf\n", d);
-  }
+  double d = NEGetDouble(obj, 0);
+  printf("%lf\n", d);
+  d += 0.1;
+  NESetDouble(obj, 0, d);
   NEDestructObject(obj);
   NEDestruct(model);
   //code = (ERROR_CODES)NEConstruct(&model);

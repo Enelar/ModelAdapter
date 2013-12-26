@@ -97,8 +97,8 @@ REFACTOR // USE C++11
 void pipe::Update()
 {
   word now = clock();
-  word second = 1000;
-  word max_desync = second * 1;
+  word second = CLOCKS_PER_SEC;
+  word max_desync = second * 0.1;
   if (now - last_update <= max_desync)
     return;
   last_update = now;
@@ -110,10 +110,17 @@ void pipe::SetRaw(const object_interface &obj, vector<param> data)
   auto info = obj.GetInfo();
   for (auto p : data)
   {
-    throw_sassert(!info.params[1].readonly, "Write protection on this parameter");
-    double t, t2;
-    string server_mapped_name;
-    ep->SetServerTile(obj.GetID(), server_mapped_name.c_str(), original_source_code::enumValueDbl, &t, &t2);
+    throw_sassert(p.id < info.params.size(), "Object parameter out of range");
+    throw_sassert(!info.params[p.id].readonly, "Write protection on this parameter");
+    auto ToDouble = [](const string &asn1)
+    {
+      return *reinterpret_cast<const double *>(asn1.c_str() + 2);
+    };
+    double 
+      cur = ToDouble(p.raw.asn1_encoded_string), 
+      prev = ToDouble(GetRaw(obj)[p.id].raw.asn1_encoded_string);
+    string server_mapped_name = "Задание"; // debug
+    ep->SetServerTile(obj.GetID(), server_mapped_name.c_str(), original_source_code::enumValueDbl, &cur, &prev);
   }
   ep->Update();
   Update();
