@@ -9,6 +9,12 @@ public class MObject
       CharSet = CharSet.Ansi,
       CallingConvention = CallingConvention.Cdecl)]
     private static extern double GetDouble(int h, int id);
+	
+    [DllImport("ExceptionSafeModel.dll",
+      EntryPoint = "?NESetDouble@@YAXHHN@Z",
+      CharSet = CharSet.Ansi,
+      CallingConvention = CallingConvention.Cdecl)]
+    private static extern double SetDouble(int h, int id, double d);	
 
     [DllImport("ExceptionSafeModel.dll",
       EntryPoint = "?NEGetDouble@@YANHPBD@Z",
@@ -36,6 +42,11 @@ public class MObject
     {
       return GetDouble(handle, param);
     }
+	
+	public void SetDouble( int param, double val )
+	{
+		SetDouble(handle, param, val);
+	}
 
 
     private int handle;

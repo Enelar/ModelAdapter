@@ -30,5 +30,8 @@ public class NewBehaviourScript : MonoBehaviour {
 		v.z = 360f * val + Time.time;
 		q.eulerAngles = v;
 		transform.rotation = q;
+		
+		if (Input.GetMouseButton(0))
+			obj.SetDouble(0, 0);
 	}
 }
