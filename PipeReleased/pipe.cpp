@@ -35,7 +35,13 @@ object_interface pipe::Get(const OBJECT_TYPES type, const word id)
 
 object_interface pipe::Get(word _id)
 {
-  todo(Enumerate over types and find type);
+  for (OBJECT_TYPES type : SupportedTypes())
+  {
+    auto t = Get(type, _id);
+    if (t.GetID())
+      return t;
+  }
+  throw_message("Object not found");
 }
 
 object_interface pipe::Get(const std::string &name)
@@ -62,6 +68,7 @@ word pipe::GetID(const OBJECT_TYPES type, const std::string &name)
 
 vector<param> pipe::GetRaw(const object_interface &obj)
 {
+  Update();
   auto server_object = ep->GetServerObject(obj.id);
   typedef std::tuple<objects::valve> supported_server_objects;
   
@@ -84,6 +91,20 @@ vector<param> pipe::GetRaw(const object_interface &obj)
   dead_space();
 }
 
+REFACTOR // USE C++11
+#include <time.h>
+
+void pipe::Update()
+{
+  word now = clock();
+  word second = 1000;
+  word max_desync = second * 1;
+  if (now - last_update <= max_desync)
+    return;
+  last_update = now;
+  ep->Update();
+}
+
 void pipe::SetRaw(const object_interface &obj, vector<param> data)
 {
   auto info = obj.GetInfo();
@@ -94,6 +115,8 @@ void pipe::SetRaw(const object_interface &obj, vector<param> data)
     string server_mapped_name;
     ep->SetServerTile(obj.GetID(), server_mapped_name.c_str(), original_source_code::enumValueDbl, &t, &t2);
   }
+  ep->Update();
+  Update();
 }
 
 pipe::store_type pipe::Make()

@@ -30,7 +30,9 @@ public:
 //private: // In case of desync temporary unavaible
   object_interface Get(const OBJECT_TYPES type, const word id);
   object_interface Get(const word id);
+  void Update();
 private:
+  word last_update = 0;
   word GetID(const OBJECT_TYPES type, const std::string &name);
 public:
   info GetInfoByObjectType(const OBJECT_TYPES type);

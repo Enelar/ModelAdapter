@@ -23,7 +23,11 @@ void f1()
 {
   int model = Construct();
   int handle = Get(model, "Z-15");
-  double param = GetDouble(handle, 0);
+  while (1)
+  {
+    double param = GetDouble(handle, 0);
+    std::cout << param << std::endl;
+  }
   DestructObject(handle);
   Destruct(model);
 }
