@@ -26,11 +26,11 @@ static decltype(&SetDouble) _SetDouble;
 
 bool LoadDll()
 {
-  if (!SetDllDirectory(L"W:/ModelDLL/"))
+  if (!SetDllDirectory("W:/ModelDLL/"))
     return 0;
   //AddDllDirectory(L"W:/documents/GitHub/TSOFT_ModelAdapter/Debug/");
-  lib = LoadLibrary(L"ModelProxy.dll");
-  DLL = GetModuleHandle(L"ModelProxy.dll");
+  lib = LoadLibrary("ModelProxy.dll");
+  DLL = GetModuleHandle("ModelProxy.dll");
     //
   if (!DLL)
     status = DLL_NOT_FOUND;
