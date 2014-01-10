@@ -69,6 +69,10 @@
       <AdditionalOptions>pipeexport.lib %(AdditionalOptions)</AdditionalOptions>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Lib>
+    <PostBuildEvent>
+      <Command>rmdir /S /Q "$(SolutionDir)\build" "$(SolutionDir)\intermediate"</Command>
+      <Message>Remove AX dependencies build files</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -89,6 +93,12 @@
     <Lib>
       <AdditionalOptions>pipeexport.lib %(AdditionalOptions)</AdditionalOptions>
     </Lib>
+    <PostBuildEvent>
+      <Command>rmdir /S /Q "$(SolutionDir)\build" "$(SolutionDir)\intermediate"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Remove AX dependencies build files</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
