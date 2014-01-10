@@ -18,6 +18,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExceptionSafeModel", "ExceptionSafeModel\ExceptionSafeModel.vcxproj", "{7142019C-93E0-41FA-A2F4-F60E907FDBBE}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExceptionSafeDebug", "ExceptionSafeDebug\ExceptionSafeDebug.vcxproj", "{4AFE991C-B1E9-4BC9-915B-2F0270CBB230}"
+	ProjectSection(ProjectDependencies) = postProject
+		{16C08539-F962-439F-B1CE-1FE610294503} = {16C08539-F962-439F-B1CE-1FE610294503}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
