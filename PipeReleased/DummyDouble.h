@@ -26,6 +26,16 @@ struct dummy_double : asn1::entity
     return ret;
   }
 
+  operator double &()
+  {
+    return t;
+  }
+
+  operator double () const
+  {
+    return t;
+  }
+
   int Length() const
   {
     return sizeof(double);
