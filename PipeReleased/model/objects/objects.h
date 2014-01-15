@@ -1,6 +1,6 @@
 #pragma once
 
-#include "mapper\mapper.h"
+#include "../mapper/mapper.h"
 
 #include "exported\air_condenser.h"
 #include "exported\gate_valve.h"
@@ -14,6 +14,6 @@
 #include <vector>
 const std::vector<OBJECT_TYPES> &SupportedTypes();
 
-#include "info.h"
+#include "../../interface/info.h"
 #include <map>
 const std::map<OBJECT_TYPES, info> &ObjectsInfo();

@@ -1,5 +1,5 @@
 #include "pipe.h"
-#include "../PipeExport/exported_pipe.h"
+#include "../../PipeExport/exported_pipe.h"
 
 pipe::pipe(const std::string &named_pipe)
 {

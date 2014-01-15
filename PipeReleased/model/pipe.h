@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "object_types.h"
+#include "objects\object_types.h"
 #include <memory>
 
 class object_interface;
@@ -41,4 +41,4 @@ public:
   void SetRaw(const object_interface &, vector<param>);
 };
 
-#include "object_interface.h"
+#include "../interface/object_interface.h"

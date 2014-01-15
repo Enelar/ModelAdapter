@@ -101,46 +101,44 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="DummyDouble.h" />
-    <ClInclude Include="exported\gate_valve.h" />
-    <ClInclude Include="exported\air_condenser.h" />
-    <ClInclude Include="exported\hs.h" />
-    <ClInclude Include="exported\pump.h" />
-    <ClInclude Include="exported\scheme_data.h" />
-    <ClInclude Include="exported\sensor.h" />
-    <ClInclude Include="exported\valve.h" />
-    <ClInclude Include="mapper\mapper.h" />
-    <ClInclude Include="mapper\mapper.hpp" />
-    <ClInclude Include="mapper\mapper_route_table.h" />
-    <ClInclude Include="mapper\mapper_route_table.hpp" />
-    <ClInclude Include="objects.h" />
-    <ClInclude Include="object_impl.h" />
-    <ClInclude Include="serialisation_route.h" />
-    <ClInclude Include="serialised_param.h" />
-    <ClInclude Include="info.h" />
-    <ClInclude Include="object_interface.h" />
-    <ClInclude Include="object_types.h" />
-    <ClInclude Include="param.h" />
-    <ClInclude Include="param_info.h" />
-    <ClInclude Include="pipe.h" />
-    <ClInclude Include="server_serialisator.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="value_type.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="exported\object_mapping.cpp" />
-    <ClCompile Include="object_interface.cpp" />
-    <ClCompile Include="object_types.cpp" />
-    <ClCompile Include="pipe.cpp" />
-    <ClCompile Include="server_serialisator.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ASN1\ASN1\ASN1.vcxproj">
       <Project>{5f0d96d1-d3cc-47de-b28e-14b9919b50d8}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DummyDouble.h" />
+    <ClInclude Include="interface\info.h" />
+    <ClInclude Include="interface\object_impl.h" />
+    <ClInclude Include="interface\object_interface.h" />
+    <ClInclude Include="interface\param.h" />
+    <ClInclude Include="interface\param_info.h" />
+    <ClInclude Include="interface\serialised_param.h" />
+    <ClInclude Include="interface\value_type.h" />
+    <ClInclude Include="model\mapper\mapper.h" />
+    <ClInclude Include="model\mapper\mapper.hpp" />
+    <ClInclude Include="model\mapper\mapper_interface.h" />
+    <ClInclude Include="model\mapper\mapper_route_table.h" />
+    <ClInclude Include="model\mapper\mapper_route_table.hpp" />
+    <ClInclude Include="model\objects\exported\air_condenser.h" />
+    <ClInclude Include="model\objects\exported\gate_valve.h" />
+    <ClInclude Include="model\objects\exported\hs.h" />
+    <ClInclude Include="model\objects\exported\pump.h" />
+    <ClInclude Include="model\objects\exported\scheme_data.h" />
+    <ClInclude Include="model\objects\exported\sensor.h" />
+    <ClInclude Include="model\objects\exported\valve.h" />
+    <ClInclude Include="model\objects\objects.h" />
+    <ClInclude Include="model\objects\object_types.h" />
+    <ClInclude Include="model\pipe.h" />
+    <ClInclude Include="model\serialisation_route.h" />
+    <ClInclude Include="model\server_serialisator.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="interface\object_interface.cpp" />
+    <ClCompile Include="model\objects\exported\object_mapping.cpp" />
+    <ClCompile Include="model\objects\object_types.cpp" />
+    <ClCompile Include="model\pipe.cpp" />
+    <ClCompile Include="model\server_serialisator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

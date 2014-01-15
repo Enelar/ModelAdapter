@@ -1,120 +1,113 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="interface">
+      <UniqueIdentifier>{3fe746a8-1ef6-442a-9445-710a37ea972f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="connecting_model">
+      <UniqueIdentifier>{a5580203-e3f5-4de5-ae4f-f5e64ee0f523}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="connecting_model\mapper">
+      <UniqueIdentifier>{153170cb-281e-42aa-8fa5-ddfcdfdf68c6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="mapper">
-      <UniqueIdentifier>{6cebe4f2-bacc-4da9-8b4b-f427d5c83dba}</UniqueIdentifier>
+    <Filter Include="connecting_model\objects">
+      <UniqueIdentifier>{f93019b7-7a8a-4887-9d25-1bf132df0d18}</UniqueIdentifier>
     </Filter>
-    <Filter Include="exported">
-      <UniqueIdentifier>{0a47fb89-d45c-49a6-9fa7-1e546c172b49}</UniqueIdentifier>
+    <Filter Include="connecting_model\objects\exported">
+      <UniqueIdentifier>{0d47e09e-849b-4dbf-8cad-459ed6ccdcd8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="object_types.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="interface\info.h">
+      <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="object_interface.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="interface\object_impl.h">
+      <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="interface\object_interface.h">
+      <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="pipe.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="interface\param.h">
+      <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="info.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="interface\param_info.h">
+      <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="param_info.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="interface\serialised_param.h">
+      <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="value_type.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="interface\value_type.h">
+      <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="param.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="DummyDouble.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="model\pipe.h">
+      <Filter>connecting_model</Filter>
     </ClInclude>
-    <ClInclude Include="serialised_param.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="model\serialisation_route.h">
+      <Filter>connecting_model</Filter>
     </ClInclude>
-    <ClInclude Include="mapper\mapper.h">
-      <Filter>mapper</Filter>
+    <ClInclude Include="model\server_serialisator.h">
+      <Filter>connecting_model</Filter>
     </ClInclude>
-    <ClInclude Include="mapper\mapper.hpp">
-      <Filter>mapper</Filter>
+    <ClInclude Include="model\mapper\mapper.h">
+      <Filter>connecting_model\mapper</Filter>
     </ClInclude>
-    <ClInclude Include="mapper\mapper_route_table.h">
-      <Filter>mapper</Filter>
+    <ClInclude Include="model\mapper\mapper.hpp">
+      <Filter>connecting_model\mapper</Filter>
     </ClInclude>
-    <ClInclude Include="mapper\mapper_route_table.hpp">
-      <Filter>mapper</Filter>
+    <ClInclude Include="model\mapper\mapper_interface.h">
+      <Filter>connecting_model\mapper</Filter>
     </ClInclude>
-    <ClInclude Include="exported\valve.h">
-      <Filter>exported</Filter>
+    <ClInclude Include="model\mapper\mapper_route_table.h">
+      <Filter>connecting_model\mapper</Filter>
     </ClInclude>
-    <ClInclude Include="objects.h">
-      <Filter>exported</Filter>
+    <ClInclude Include="model\mapper\mapper_route_table.hpp">
+      <Filter>connecting_model\mapper</Filter>
     </ClInclude>
-    <ClInclude Include="exported\gate_valve.h">
-      <Filter>exported</Filter>
+    <ClInclude Include="model\objects\object_types.h">
+      <Filter>connecting_model\objects</Filter>
     </ClInclude>
-    <ClInclude Include="exported\sensor.h">
-      <Filter>exported</Filter>
+    <ClInclude Include="model\objects\objects.h">
+      <Filter>connecting_model\objects</Filter>
     </ClInclude>
-    <ClInclude Include="exported\pump.h">
-      <Filter>exported</Filter>
+    <ClInclude Include="model\objects\exported\air_condenser.h">
+      <Filter>connecting_model\objects\exported</Filter>
     </ClInclude>
-    <ClInclude Include="exported\scheme_data.h">
-      <Filter>exported</Filter>
+    <ClInclude Include="model\objects\exported\gate_valve.h">
+      <Filter>connecting_model\objects\exported</Filter>
     </ClInclude>
-    <ClInclude Include="exported\air_condenser.h">
-      <Filter>exported</Filter>
+    <ClInclude Include="model\objects\exported\hs.h">
+      <Filter>connecting_model\objects\exported</Filter>
     </ClInclude>
-    <ClInclude Include="exported\hs.h">
-      <Filter>exported</Filter>
+    <ClInclude Include="model\objects\exported\pump.h">
+      <Filter>connecting_model\objects\exported</Filter>
     </ClInclude>
-    <ClInclude Include="object_impl.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="model\objects\exported\scheme_data.h">
+      <Filter>connecting_model\objects\exported</Filter>
     </ClInclude>
-    <ClInclude Include="serialisation_route.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="model\objects\exported\sensor.h">
+      <Filter>connecting_model\objects\exported</Filter>
     </ClInclude>
-    <ClInclude Include="server_serialisator.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DummyDouble.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="model\objects\exported\valve.h">
+      <Filter>connecting_model\objects\exported</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pipe.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="interface\object_interface.cpp">
+      <Filter>interface</Filter>
     </ClCompile>
-    <ClCompile Include="object_interface.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="model\pipe.cpp">
+      <Filter>connecting_model</Filter>
     </ClCompile>
-    <ClCompile Include="object_types.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="model\server_serialisator.cpp">
+      <Filter>connecting_model</Filter>
     </ClCompile>
-    <ClCompile Include="exported\object_mapping.cpp">
-      <Filter>exported</Filter>
+    <ClCompile Include="model\objects\object_types.cpp">
+      <Filter>connecting_model\objects</Filter>
     </ClCompile>
-    <ClCompile Include="server_serialisator.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="model\objects\exported\object_mapping.cpp">
+      <Filter>connecting_model\objects\exported</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
-#include "../PipeReleased/Pipe.h"
-#include "../PipeReleased/objects.h"
+#include "../PipeReleased/model/pipe.h"
+#include "../PipeReleased/model/objects/objects.h"
 #include <iostream>
 
 

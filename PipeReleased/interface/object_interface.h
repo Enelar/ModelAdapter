@@ -1,10 +1,10 @@
 #pragma once
 
-#include "stdafx.h"
+#include "../stdafx.h"
 #include "info.h"
 #include "param.h"
-#include "object_types.h"
-#include "pipe.h"
+#include "../model/objects/object_types.h"
+#include "../model/pipe.h"
 
 class object_interface
 {

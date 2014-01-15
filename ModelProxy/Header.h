@@ -4,7 +4,7 @@
 #define PROXY_API __declspec(dllimport)
 #endif
 
-#include "../PipeReleased/pipe.h"
+#include "../PipeReleased/model/pipe.h"
 
 struct object
 {

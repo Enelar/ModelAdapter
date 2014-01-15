@@ -1,7 +1,7 @@
-#include "stdafx.h"
+#include "../stdafx.h"
 
 #include <vector>
-#include "param.h"
+#include "../interface/param.h"
 
 template<typename T>
 bool server_serializator(const server_object_container<typename T::mapped> &, vector<param> &)
@@ -9,7 +9,7 @@ bool server_serializator(const server_object_container<typename T::mapped> &, ve
   IMPLEMENTATION_REQUIRED
 }
 
-#include "objects.h"
+#include "objects\objects.h"
 
 template<typename T>
 bool basic_server_serializator(const server_object_container<typename T::mapped> &, vector<param> &);

@@ -1,10 +1,10 @@
-#include "../PipeExport/server_object_container.h"
+#include "../../PipeExport/server_object_container.h"
 #include "server_serialisator.h"
 #include "mapper\mapper.h"
 
-#include "exported\scheme_data.h"
+#include "objects\exported\scheme_data.h"
 
-#include "DummyDouble.h"
+#include "../DummyDouble.h"
 
 template<typename T>
 bool basic_server_serializator(const server_object_container<typename T::mapped> &server_obj, vector<param> &ret)

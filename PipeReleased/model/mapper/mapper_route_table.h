@@ -1,6 +1,6 @@
 #pragma once
-#include "../stdafx.h"
-#include "../param_info.h"
+#include "../../stdafx.h"
+#include "../../interface/param_info.h"
 #include <map>
 
 template<typename OriginT>

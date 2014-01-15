@@ -3,7 +3,7 @@
 #ifndef _VALUE_TYPE_H_
 #define _VALUE_TYPE_H_
 
-#include "../PipeExport/value_types.h"
+#include "../../PipeExport/value_types.h"
 
 namespace pipe_released
 {
