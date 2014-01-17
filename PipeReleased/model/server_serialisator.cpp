@@ -1,3 +1,5 @@
+#define _SERVER_SERIALISATOR_SHROODINGER
+
 #include "../../PipeExport/server_object_container.h"
 #include "server_serialisator.h"
 #include "mapper\mapper.h"
@@ -33,16 +35,4 @@ bool basic_server_serializator(const server_object_container<typename T::mapped>
     ret.push_back(p);
   }
   return true;
-}
-
-template<>
-bool server_serializator<objects::valve>(const server_object_container<objects::valve::mapped> &server_obj, vector<param> &ret)
-{
-  return basic_server_serializator<objects::valve>(server_obj, ret);
-}
-
-template<>
-bool server_serializator<objects::gate_valve>(const server_object_container<objects::gate_valve::mapped> &server_obj, vector<param> &ret)
-{
-  return basic_server_serializator<objects::gate_valve>(server_obj, ret);
 }

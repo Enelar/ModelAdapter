@@ -131,6 +131,7 @@
     <ClInclude Include="model\pipe.h" />
     <ClInclude Include="model\serialisation_route.h" />
     <ClInclude Include="model\server_serialisator.h" />
+    <ClInclude Include="model\server_serialisator_impl.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>

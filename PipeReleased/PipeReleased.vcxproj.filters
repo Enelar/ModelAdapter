@@ -92,6 +92,9 @@
     <ClInclude Include="model\objects\exported\valve.h">
       <Filter>connecting_model\objects\exported</Filter>
     </ClInclude>
+    <ClInclude Include="model\server_serialisator_impl.h">
+      <Filter>connecting_model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="interface\object_interface.cpp">

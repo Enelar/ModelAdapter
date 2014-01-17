@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../stdafx.h"
 
 #include <vector>
@@ -14,7 +16,4 @@ bool server_serializator(const server_object_container<typename T::mapped> &, ve
 template<typename T>
 bool basic_server_serializator(const server_object_container<typename T::mapped> &, vector<param> &);
 
-template<>
-bool server_serializator<objects::valve>(const server_object_container<objects::valve::mapped> &server_obj, vector<param> &ret);
-template<>
-bool server_serializator<objects::gate_valve>(const server_object_container<objects::gate_valve::mapped> &server_obj, vector<param> &ret);
+#include "server_serialisator_impl.h"
