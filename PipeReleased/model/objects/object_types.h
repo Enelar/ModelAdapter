@@ -42,14 +42,29 @@ struct object_id
   const static OBJECT_TYPES tid;
 };
 
+template<int tid>
+struct object_type
+{
+};
+
 #include "objects.h"
 
 // Because minimal rebuild bug, that should be inited in every .obj file
 template<typename T>
 const OBJECT_TYPES object_id<T>::tid = NOTANOBJECT;
-const OBJECT_TYPES object_id<objects::valve>::tid = VALVE;
-const OBJECT_TYPES object_id<objects::gate_valve>::tid = GATE_VALVE;
-const OBJECT_TYPES object_id<objects::air_condenser>::tid = AIR_CONDENSER;
-const OBJECT_TYPES object_id<objects::hs>::tid = HS;
-const OBJECT_TYPES object_id<objects::pump>::tid = PUMP;
-const OBJECT_TYPES object_id<objects::sensor>::tid = SENSOR;
+
+#define BIND_OBJECT_TYPE_ID(_type_, _tid_) \
+  const OBJECT_TYPES object_id<_type_>::tid = _tid_; \
+  template<>                                          \
+  struct object_type<_tid_>                            \
+  {                                                     \
+    typedef _type_ type;                                 \
+  };                                                      \
+  static_assert(object_id<object_type<_tid_>::type>::tid == _tid_, "Failed bind " TOSTRING(_type_))
+
+BIND_OBJECT_TYPE_ID(objects::valve, VALVE);
+BIND_OBJECT_TYPE_ID(objects::gate_valve, GATE_VALVE);
+BIND_OBJECT_TYPE_ID(objects::air_condenser, AIR_CONDENSER);
+BIND_OBJECT_TYPE_ID(objects::hs, HS);
+BIND_OBJECT_TYPE_ID(objects::pump, PUMP);
+BIND_OBJECT_TYPE_ID(objects::sensor, SENSOR);
