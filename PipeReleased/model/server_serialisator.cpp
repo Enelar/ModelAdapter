@@ -8,20 +8,30 @@
 
 #include "../DummyDouble.h"
 
+namespace
+{
+  template<typename T>
+  auto SerializeParam(const T &)->string
+  {
+    IMPLEMENTATION_REQUIRED
+  }
+
+  template<>
+  auto SerializeParam(const double &val)->string
+  {
+    asn1::stream str;
+    dummy_double d(val);
+    str << d;
+    return str;
+  }
+}
+
 template<typename T>
 bool basic_server_serializator(const server_object_container<typename T::mapped> &server_obj, vector<param> &ret)
 {
   const T m;
   const ub *mem = server_obj.Memory() + sizeof(original_source_code::CShBase) + sizeof(original_source_code::CFlags);
   m.Platform(reinterpret_cast<typename const T::mapped *>(mem));
-
-  auto SerializeParam = [](double val) -> string
-  {
-    asn1::stream str;
-    dummy_double d(val);
-    str << d;    
-    return str;
-  };
 
   int id = 0;
   param p;
